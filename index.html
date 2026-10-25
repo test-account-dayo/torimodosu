@@ -39,6 +39,10 @@ body{font-family:"Hiragino Maru Gothic ProN","Hiragino Maru Gothic Pro","M PLUS 
 .bp .row2{display:flex;gap:.6em;color:#e6e1ff;margin-bottom:calc(var(--u)*1)}
 .bp .row2 b{color:#fff}
 .bp .act{color:#ffe066}
+.bp.p3{font-size:calc(var(--u)*6.6);padding:calc(var(--u)*3.4) calc(var(--u)*4)}
+.bp .r3{display:grid;grid-template-columns:5.4em 1fr 3.1em 2.3em;align-items:center;white-space:nowrap;line-height:1.55}
+.bp .r3 .tag{font-size:.75em;margin-left:0}
+.bp .r3.act{color:#ffe066}
 .bp .low{color:#ff8787}
 .bp .ko{color:#9990cf}
 .tag{font-size:.8em;border-radius:999px;padding:0 .4em;margin-left:.3em}
@@ -47,6 +51,9 @@ body{font-family:"Hiragino Maru Gothic ProN","Hiragino Maru Gothic Pro","M PLUS 
 .stat .cols{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*6)}
 .stat .nm{color:#ffe066;font-size:1.15em;margin-bottom:.2em}
 .stat .ln{display:flex;justify-content:space-between}
+.stat.s3{font-size:calc(var(--u)*6.3);padding:calc(var(--u)*4) calc(var(--u)*5)}
+.stat.s3 .cols{gap:calc(var(--u)*4)}
+.stat .ln.sp span:last-child{text-align:right}
 .stat .ft{margin-top:calc(var(--u)*4);display:flex;justify-content:space-between;color:#d8d2ff;border-top:calc(var(--u)*.6) dashed #ffffff55;padding-top:calc(var(--u)*2)}
 .wmap{display:flex;flex-direction:column;align-items:center}
 .wmap canvas{image-rendering:pixelated;border-radius:calc(var(--u)*2);margin-top:calc(var(--u)*2)}
@@ -154,6 +161,15 @@ const SONGS={
  boss:{bpm:160,tracks:[
   {wave:'square',vol:0.06,notes:'E5:2 -:2 E5:2 G5:2 B5:4 A5:2 G5:2 F#5:2 -:2 F#5:2 A5:2 C6:4 B5:2 A5:2 G5:2 -:2 G5:2 B5:2 E6:4 D6:2 C6:2 B5:8 D#5:8 E5:2 G5:2 B5:2 E6:2 D6:2 C6:2 B5:2 A5:2 C6:2 B5:2 A5:2 G5:2 F#5:4 A5:4 G5:2 F#5:2 E5:2 D#5:2 E5:2 F#5:2 G5:2 A5:2 B5:12 -:4'},
   {wave:'triangle',vol:0.22,notes:'E3:2 E4:2 E3:2 E4:2 E3:2 E4:2 E3:2 E4:2 D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 C3:2 C4:2 C3:2 C4:2 C3:2 C4:2 C3:2 C4:2 B2:2 B3:2 B2:2 B3:2 B2:2 B3:2 B2:2 B3:2 E3:2 E4:2 E3:2 E4:2 E3:2 E4:2 E3:2 E4:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2 C3:2 C4:2 C3:2 C4:2 B2:2 B3:2 B2:2 B3:2 B2:2 B3:2 B2:2 B3:2 E3:4 -:4'}]},
+ port:{bpm:112,tracks:[
+  {wave:'square',vol:0.06,notes:'C5:3 E5:1 G5:4 A5:4 G5:4 F5:3 A5:1 C6:4 A5:4 F5:4 E5:3 G5:1 C6:4 B5:4 A5:4 G5:12 -:4 A5:3 G5:1 F5:4 E5:4 D5:4 G5:3 F5:1 E5:4 D5:4 C5:4 D5:4 E5:4 F5:4 B4:4 C5:12 -:4'},
+  {wave:'triangle',vol:0.22,notes:'C3:4 G3:4 E3:4 G3:4 F2:4 C3:4 A2:4 C3:4 C3:4 G3:4 E3:4 G3:4 G2:4 D3:4 B2:4 D3:4 F2:4 C3:4 A2:4 C3:4 C3:4 G3:4 E3:4 G3:4 G2:4 D3:4 B2:4 D3:4 C3:4 G2:4 C3:4 -:4'}]},
+ cave:{bpm:88,tracks:[
+  {wave:'square',vol:0.045,notes:'E5:8 D5:4 C5:4 B4:12 -:4 C5:8 B4:4 A4:4 G#4:12 -:4 A4:4 C5:4 E5:4 F5:4 E5:8 D5:8 C5:4 B4:4 A4:4 G#4:4 A4:12 -:4'},
+  {wave:'triangle',vol:0.24,notes:'A2:4 -:4 A2:4 E2:4 E2:4 -:4 E2:4 B2:4 F2:4 -:4 F2:4 C3:4 E2:4 -:4 E2:4 G#2:4 A2:4 -:4 A2:4 E3:4 D3:4 -:4 D3:4 A2:4 E2:4 -:4 E2:4 G#2:4 A2:8 E2:8'}]},
+ boss2:{bpm:168,tracks:[
+  {wave:'square',vol:0.06,notes:'D5:2 F5:2 A5:2 D6:2 C6:2 A5:2 F5:2 A5:2 A#5:4 A5:4 G5:4 F5:4 E5:2 G5:2 A#5:2 E6:2 D6:2 A#5:2 G5:2 A#5:2 A5:8 -:4 A4:4 D5:2 F5:2 A5:2 D6:2 F6:4 E6:4 D6:4 C6:4 A#5:4 A5:4 G5:2 A#5:2 D6:2 G6:2 F6:4 E6:4 D6:8 C#6:8'},
+  {wave:'triangle',vol:0.22,notes:'D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 A#2:2 A#3:2 A#2:2 A#3:2 A#2:2 A#3:2 A#2:2 A#3:2 C3:2 C4:2 C3:2 C4:2 C3:2 C4:2 C3:2 C4:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2 D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 D3:2 D4:2 A#2:2 A#3:2 A#2:2 A#3:2 A#2:2 A#3:2 A#2:2 A#3:2 G2:2 G3:2 G2:2 G3:2 G2:2 G3:2 G2:2 G3:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2 A2:2 A3:2'}]},
  win:{bpm:150,once:true,tracks:[
   {wave:'square',vol:0.07,notes:'G4:2 C5:2 E5:2 G5:6 E5:2 G5:8 -:2 C6:12'},
   {wave:'triangle',vol:0.22,notes:'C3:2 E3:2 G3:2 C4:6 G3:2 C4:8 -:2 C3:12'}]},
@@ -233,6 +249,8 @@ class Pix{
   rect(x,y,w,h,c){this.g.fillStyle=c;this.g.fillRect(x,y,w,h)}
   ell(cx,cy,rx,ry,c){this.g.fillStyle=c;for(let y=Math.floor(cy-ry);y<=Math.ceil(cy+ry);y++)for(let x=Math.floor(cx-rx);x<=Math.ceil(cx+rx);x++){const dx=(x+.5-cx)/rx,dy=(y+.5-cy)/ry;if(dx*dx+dy*dy<=1)this.g.fillRect(x,y,1,1)}}
   ellF(cx,cy,rx,ry,fn){for(let y=Math.floor(cy-ry);y<=Math.ceil(cy+ry);y++)for(let x=Math.floor(cx-rx);x<=Math.ceil(cx+rx);x++){const dx=(x+.5-cx)/rx,dy=(y+.5-cy)/ry;if(dx*dx+dy*dy<=1){const c=fn(x,y);if(c){this.g.fillStyle=c;this.g.fillRect(x,y,1,1)}}}}
+  clr(x,y,w,h){this.g.clearRect(x,y,w,h)}
+  tri(cx,top,h,half,c){for(let y=0;y<h;y++){const w=Math.round(half*(y+1)/h);this.rect(cx-w,top+y,2*w+1,1,c)}}
   line(x0,y0,x1,y1,c){const n=Math.max(Math.abs(x1-x0),Math.abs(y1-y0));for(let i=0;i<=n;i++)this.px(Math.round(x0+(x1-x0)*i/n),Math.round(y0+(y1-y0)*i/n),c)}
   map(rows,pal){rows.forEach((r,y)=>{for(let x=0;x<r.length;x++){const ch=r[x];if(ch!=='.'&&pal[ch])this.px(x,y,pal[ch])}})}
   outline(col=OUT){const{w,h}=this;const d=this.g.getImageData(0,0,w,h).data;const o=[];
@@ -267,6 +285,19 @@ function buildTiles(){
   tile('ftree',p=>{p.g.drawImage(T.ffloor,0,0);treeOn(p,'#145a2c','#1f7a3a','#2f9e44','#51cf66','#5c3a1a')});
   tile('fmush',p=>{p.g.drawImage(T.ffloor,0,0);p.rect(7,10,2,4,'#fff3d6');p.ell(8,9.5,3.6,2.4,'#ff6b6b');p.px(7,8,'#fff');p.px(9,9,'#fff');p.rect(11,12,1,2,'#fff3d6');p.ell(11.5,11.5,1.8,1.2,'#ffa94d')});
   tile('fflower',p=>{p.g.drawImage(T.ffloor,0,0);flower(p,4,5,'#a5d8ff','#fff');flower(p,11,11,'#d0bfff','#fff')});
+  tile('tunnel',p=>{grassBase(p);for(let y=1;y<16;y++){const hw=Math.floor((y)*0.55)+1;for(let x=8-hw;x<8+hw;x++)p.px(x,y,x<8?'#c99d6e':'#9c6f45')}p.ell(8,13,4.6,5,'#6b4423');p.ell(8,13.5,3.6,4.2,'#212529');p.rect(4,14,9,2,'#212529');p.px(6,11,'#495057');p.px(10,12,'#495057')});
+  tile('sand',p=>{p.rect(0,0,16,16,'#ffe8a3');for(const[x,y]of[[3,2],[11,4],[6,9],[13,12],[2,13],[9,14]])p.px(x,y,'#f2c96b');p.px(12,7,'#fff')});
+  tile('palm',p=>{p.g.drawImage(T.sand,0,0);p.line(9,15,7,6,'#a0703c');p.line(10,15,8,6,'#8b5a2b');for(const[dx,dy]of[[-6,1],[6,1],[-5,-2],[5,-3],[0,-4]])p.line(8,5,8+dx,5+dy+2,'#2f9e44');p.ell(8,5,3,2,'#40c057');p.px(7,7,'#8b5a2b');p.px(9,7,'#8b5a2b')});
+  tile('pier',p=>{p.g.drawImage(T.water0,0,0);p.rect(2,0,12,16,'#c08a52');for(let y=0;y<16;y+=4)p.rect(2,y,12,1,'#8d5d33');p.rect(2,0,1,16,'#6b4423');p.rect(13,0,1,16,'#6b4423')});
+  tile('boat',p=>{p.g.drawImage(T.water0,0,0);p.rect(2,10,12,3,'#a0522d');p.rect(3,13,10,1,'#6b4423');p.rect(1,9,14,1,'#c97b4a');p.rect(8,1,1,9,'#6b4423');p.tri(5,2,7,3,'#ffffff');p.px(9,3,'#e03131')});
+  tile('volc',p=>{p.rect(0,0,16,16,'#5c3a1a');for(let y=1;y<16;y++){const hw=Math.floor(y*0.55)+1;for(let x=8-hw;x<8+hw;x++)p.px(x,y,x<8?'#8d4b2a':'#6b3420')}p.rect(7,1,2,2,'#ff922b');p.px(7,4,'#ff6b35');p.px(8,6,'#ff6b35');p.px(2,13,'#3d2a24');p.px(13,14,'#3d2a24')});
+  tile('volcIcon',p=>{p.g.drawImage(T.volc,0,0);p.ell(8,12,4.6,4.4,'#3d2a24');p.ell(8,12.5,3.4,3.6,'#ff6b35');p.ell(8,13,2,2.4,'#ffd43b');p.rect(4,14,9,2,'#ff6b35')});
+  tile('portIcon',p=>{p.g.drawImage(T.sand,0,0);p.rect(1,8,7,6,'#fff3d6');p.tri(4,4,4,4,'#4dabf7');p.rect(4,11,2,3,'#8d5524');p.rect(10,3,4,11,'#ffffff');p.rect(10,5,4,2,'#e03131');p.rect(10,9,4,2,'#e03131');p.rect(9,1,6,2,'#ffd43b');p.rect(9,14,6,2,'#adb5bd')});
+  tile('cfloor',p=>{p.rect(0,0,16,16,'#6b4a3a');for(const[x,y]of[[2,3],[10,2],[6,9],[13,11],[3,13],[9,14]])p.px(x,y,'#5a3d30');p.px(12,6,'#7d5a48');p.px(5,6,'#7d5a48')});
+  tile('cfloor2',p=>{p.g.drawImage(T.cfloor,0,0);p.ell(5,6,1.6,1.2,'#ff922b');p.px(5,6,'#ffd43b');p.ell(11,11,1.4,1,'#ff6b35')});
+  tile('rock',p=>{p.rect(0,0,16,16,'#3d2a24');p.rect(0,0,16,2,'#5c4033');p.rect(1,6,6,1,'#2b1d18');p.rect(9,11,6,1,'#2b1d18');p.px(3,3,'#6b4a3a');p.px(12,8,'#6b4a3a');p.rect(0,15,16,1,'#241713')});
+  for(const f of[0,1])tile('lava'+f,p=>{p.rect(0,0,16,16,'#e8590c');for(const[x0,y]of[[1,2],[8,5],[3,10],[11,12]]){const x=(x0+f*4)%14;p.ell(x+1,y,2.2,1.4,'#ffd43b');p.px(x+1,y,'#fff3bf')}p.rect(0,0,16,1,'#c92a2a');p.rect(0,15,16,1,'#c92a2a')});
+  tile('cexit',p=>{p.rect(0,0,16,16,'#9c7a62');for(const y of[4,10]){p.px(7,y,'#c9ab92');p.px(8,y-1,'#c9ab92');p.px(9,y,'#c9ab92')}p.rect(0,0,2,16,'#7d5a48');p.rect(14,0,2,16,'#7d5a48')});
   tile('fexit',p=>{p.rect(0,0,16,16,'#d8efb0');p.rect(0,0,2,16,'#b8d98c');p.rect(14,0,2,16,'#b8d98c');p.px(7,5,'#9fc46f');p.px(8,4,'#9fc46f');p.px(9,5,'#9fc46f');p.px(7,10,'#9fc46f');p.px(8,9,'#9fc46f');p.px(9,10,'#9fc46f')});
 }
 
@@ -303,6 +334,16 @@ function buildChars(){
   SPR.inn=npc({H:'#ffd43b',h:'#ffe066',C:'#74c0fc',D:'#1c7ed6'},(p,dir)=>{if(dir==='down'){p.px(5,2,'#ff6b6b');p.px(10,2,'#ff6b6b')}});
   SPR.girl=npc({H:'#f76707',h:'#ffa94d',C:'#ff8787',D:'#e03131',B:'#c2255c'},(p,dir)=>{if(dir==='down'){p.px(2,6,'#f76707');p.px(2,7,'#f76707');p.px(13,6,'#f76707');p.px(13,7,'#f76707')}});
   SPR.man=npc({H:'#495057',h:'#868e96',C:'#69db7c',D:'#2b8a3e'});
+  SPR.randy=charSprites({...BASEPAL,H:'#f76707',h:'#ffa94d',C:'#4dabf7',D:'#1864ab',B:'#6b4423'},(p,dir)=>{
+    const H='#f76707';if(dir!=='right'){p.px(4,1,H);p.px(7,0,H);p.px(10,0,H);p.px(12,1,H)}else{p.px(3,1,H);p.px(6,0,H);p.px(9,0,H)}
+    if(dir==='down'){p.rect(13,5,1,7,'#e9ecef');p.px(13,4,'#ffffff');p.rect(12,12,3,1,'#ffd43b');p.rect(13,13,1,2,'#8d5524');p.px(4,10,'#e03131');p.px(11,10,'#e03131')}
+    if(dir==='up'){p.rect(2,5,1,7,'#e9ecef');p.px(2,4,'#ffffff');p.rect(1,12,3,1,'#ffd43b');p.rect(2,13,1,2,'#8d5524')}
+    if(dir==='right'){p.rect(12,9,4,1,'#e9ecef');p.px(15,9,'#ffffff');p.rect(11,8,1,3,'#ffd43b')}
+  });
+  SPR.guard=npc({H:'#adb5bd',h:'#dee2e6',C:'#868e96',D:'#495057',B:'#343a40'},(p,dir)=>{if(dir!=='right'){p.px(7,0,'#e03131');p.px(8,0,'#e03131')}const sx=dir==='up'?2:dir==='right'?13:13;for(let y=1;y<16;y++)p.px(sx,y,'#8d5524');p.px(sx,0,'#dee2e6');if(sx>0)p.px(sx-1,1,'#dee2e6');if(sx<15)p.px(sx+1,1,'#dee2e6')});
+  SPR.girl2=npc({H:'#1c3d6e',h:'#4263eb',C:'#ffe066',D:'#f59f00',B:'#e64980'},(p,dir)=>{if(dir==='down'){p.px(3,3,'#ff8cc6');p.px(12,3,'#ff8cc6')}});
+  SPR.boy2=npc({H:'#8d5524',h:'#a9744f',C:'#ff922b',D:'#e8590c'});
+  SPR.sailor=npc({H:'#f8f9fa',h:'#dee2e6',C:'#ffffff',D:'#1971c2',B:'#1c3d6e'},(p,dir)=>{if(dir!=='right'){p.rect(4,3,8,1,'#1971c2')}if(dir==='down'){p.rect(4,11,8,1,'#1971c2');p.rect(4,13,8,1,'#1971c2')}});
   SPR.boy=npc({H:'#343a40',h:'#495057',C:'#4dabf7',D:'#1971c2'});
   SPR.woman=npc({H:'#9c36b5',h:'#cc5de8',C:'#faa2c1',D:'#d6336c'},(p,dir)=>{if(dir==='down'){for(let y=8;y<12;y++){p.px(3,y,'#9c36b5');p.px(12,y,'#9c36b5')}}});
   // cat
@@ -312,6 +353,7 @@ function buildChars(){
   {const p=new Pix(16,16);p.ell(4,7,3.2,4,'rgba(208,235,255,.9)');p.ell(12,7,3.2,4,'rgba(208,235,255,.9)');p.ell(8,11,2.6,3.4,'#fcc2d7');p.ell(8,6,3,3,'#ffe0c2');p.ell(8,4.2,3.4,2,'#ffe066');p.px(7,6,OUT);p.px(9,6,OUT);p.px(8,8,'#ff8fab');p.px(8,1,'#fff');p.outline();const c=p.c;SPR.fairy={down:[c,c,c],up:[c,c,c],right:[c,c,c],left:[c,c,c]}}
   // boss mini
   {const p=new Pix(16,16);p.ell(8,12.5,4,3.4,'#fff3d6');p.ell(8,6.5,7.5,4.6,'#e8590c');p.ell(8,6,7,4,'#ff922b');p.px(4,5,'#fff4e6');p.px(5,5,'#fff4e6');p.px(11,4,'#fff4e6');p.px(8,8,'#fff4e6');p.rect(5,0,6,2,'#ffd43b');p.px(5,0,'#0000');p.px(8,0,'#0000');p.px(7,1,'#e03131');p.px(6,12,OUT);p.px(10,12,OUT);p.rect(6,14,4,1,'#8d5524');p.outline();const c=p.c;SPR.bossmini={down:[c,c,c],up:[c,c,c],right:[c,c,c],left:[c,c,c]}}
+  {const p=new Pix(16,16);p.ell(4,7,3,3.5,'#c92a2a');p.ell(12,7,3,3.5,'#c92a2a');p.ell(8,10,5.5,5,'#e03131');p.ell(8,12,3.2,2.8,'#ffe066');p.tri(5,1,3,1,'#fff3bf');p.tri(11,1,3,1,'#fff3bf');p.ell(8,7,4.5,3.5,'#ff6b6b');p.px(6,6,OUT);p.px(10,6,OUT);p.px(7,9,'#862e9c');p.px(9,9,'#862e9c');p.outline();const c=p.c;SPR.dragonmini={down:[c,c,c],up:[c,c,c],right:[c,c,c],left:[c,c,c]}}
   // chests
   {const p=new Pix(16,16);p.rect(2,5,12,9,'#c97b2c');p.rect(2,5,12,4,'#e8913a');p.rect(2,8,12,1,'#ffd43b');p.rect(7,7,2,4,'#ffd43b');p.px(7,9,OUT);p.outline();SPR.chestC=p.c}
   {const p=new Pix(16,16);p.rect(2,8,12,6,'#c97b2c');p.rect(3,6,10,3,'#4a2a10');p.rect(2,3,12,3,'#e8913a');p.rect(2,5,12,1,'#ffd43b');p.px(6,7,'#ffe066');p.px(9,7,'#fff');p.outline();SPR.chestO=p.c}
@@ -365,6 +407,63 @@ const EDRAW={
   p.ell(20,28,14,10.5,'#8b5a2b');p.ell(20,30,8.5,7,'#e6c08f');p.ell(20,15,11,9.5,'#9c6634');p.ell(20,19,5,3.6,'#e6c08f');p.ell(20,17.5,2,1.3,'#2b2140');
   p.rect(14,12,2,3,'#2b2140');p.rect(24,12,2,3,'#2b2140');p.px(14,12,'#fff');p.px(24,12,'#fff');p.rect(11,17,3,1,'#ff8fab');p.rect(26,17,3,1,'#ff8fab');p.px(19,21,'#2b2140');p.px(21,21,'#2b2140');p.px(20,22,'#2b2140');
   for(const x of[5,7,9,31,33,35])p.px(x,31,'#fff');return p.outline().c},
+ kani(){const p=new Pix(32,32);for(const sd of[-1,1])for(let i=0;i<3;i++){const x0=16+sd*7,y0=22+i*2;p.line(x0,y0,x0+sd*7,y0+4+i,'#c92a2a')}
+  for(const sd of[-1,1]){const cx=16+sd*11;p.line(16+sd*7,18,cx,12,'#c92a2a');p.line(16+sd*7,19,cx,13,'#c92a2a');p.ell(cx,9,4.3,4.2,'#ff6b6b');p.ell(cx-sd,8,1.6,1.4,'#ffc9c9');p.clr(cx-1,4,2,4)}
+  p.ell(16,21,11,7,'#c92a2a');p.ell(16,20,10,6,'#ff6b6b');p.ell(12,17,3,1.4,'#ffa8a8');
+  p.rect(12,10,1,6,'#c92a2a');p.rect(19,10,1,6,'#c92a2a');p.ell(12.5,9,2.3,2.3,'#fff');p.ell(19.5,9,2.3,2.3,'#fff');p.rect(12,8,2,2,'#2b2140');p.rect(19,8,2,2,'#2b2140');
+  p.rect(14,22,4,1,'#862e9c');p.rect(9,20,2,1,'#ffc9de');p.rect(21,20,2,1,'#ffc9de');return p.outline().c},
+ kamome(){const p=new Pix(32,32);p.ell(7,14,6.5,3.2,'#ced4da');p.ell(25,14,6.5,3.2,'#ced4da');p.ell(3,12.5,2.5,2,'#495057');p.ell(29,12.5,2.5,2,'#495057');
+  p.rect(13,26,1,4,'#ffa94d');p.rect(18,26,1,4,'#ffa94d');p.rect(11,30,4,1,'#ffa94d');p.rect(17,30,4,1,'#ffa94d');
+  p.ell(16,20,8,7,'#f8f9fa');p.ell(19,22,4,4,'#e9ecef');p.ell(16,11,5.6,5,'#ffffff');p.rect(14,13,5,2,'#ffa94d');p.rect(15,15,3,1,'#f76707');
+  p.rect(12,9,2,2,'#2b2140');p.rect(18,9,2,2,'#2b2140');p.px(12,9,'#fff');p.px(18,9,'#fff');p.rect(10,12,2,1,'#ffc9de');p.rect(20,12,2,1,'#ffc9de');return p.outline().c},
+ inoshishi(){const p=new Pix(32,32);p.rect(9,24,3,6,'#5c3a1a');p.rect(22,24,3,6,'#5c3a1a');p.rect(14,25,3,5,'#4a2e14');p.rect(26,25,3,5,'#4a2e14');
+  p.ell(18,19,12,8,'#8b5a2b');p.ell(20,12,9,3,'#5c3a1a');p.line(30,16,31,13,'#5c3a1a');
+  p.ell(9,18,7,6.5,'#a0703c');p.ell(13,11,2,2.6,'#8b5a2b');p.ell(5,21,3.6,2.7,'#ffa8a8');p.px(4,21,'#862e9c');p.px(6,21,'#862e9c');
+  p.line(3,24,2,20,'#ffffff');p.line(8,24,9,21,'#ffffff');
+  p.rect(6,15,2,2,'#2b2140');p.rect(11,15,2,2,'#2b2140');p.line(5,13,8,14,'#2b2140');p.line(13,13,10,14,'#2b2140');return p.outline().c},
+ tako(){const p=new Pix(32,32);for(let i=0;i<6;i++){const x=6+i*4;p.ell(x,25,2,4.2,'#fa5252');p.px(x+(i%2?1:-1),29,'#fa5252');p.px(x,26,'#ffc9c9')}
+  p.ell(16,14,11,10,'#ff6b6b');p.ell(11,9,3.4,2.2,'#ffc9c9');p.ell(23,12,1.6,1.6,'#e03131');p.ell(21,7,1.2,1.2,'#e03131');
+  p.rect(5,8,22,2,'#f8f9fa');p.rect(26,6,3,2,'#f8f9fa');p.rect(27,9,2,3,'#f8f9fa');
+  p.ell(12,16,2.6,3,'#fff');p.ell(20,16,2.6,3,'#fff');p.rect(12,16,2,2,'#2b2140');p.rect(20,16,2,2,'#2b2140');p.ell(16,21,2,1.6,'#e03131');p.px(16,21,'#862e9c');
+  p.rect(8,19,2,1,'#ffc9de');p.rect(23,19,2,1,'#ffc9de');return p.outline().c},
+ saboten(){const p=new Pix(32,32);p.rect(9,25,14,2,'#f76707');p.rect(10,27,12,4,'#e8590c');p.rect(11,28,10,1,'#ffa94d');
+  p.ell(6,14,2.6,5,'#40c057');p.rect(7,17,5,2,'#40c057');p.ell(26,11,2.6,5,'#40c057');p.rect(20,14,5,2,'#40c057');
+  p.ell(16,16,7,10.5,'#40c057');p.rect(13,8,1,16,'#2f9e44');p.rect(19,8,1,16,'#2f9e44');p.ell(12,10,1.6,3,'#69db7c');
+  for(const[x,y]of[[10,9],[22,12],[11,20],[21,21],[16,7],[4,11],[28,9],[15,24]])p.px(x,y,'#ffffff');
+  p.ell(16,5,3.2,2,'#ff8cc6');p.px(16,5,'#ffd43b');p.rect(13,13,2,3,'#2b2140');p.rect(18,13,2,3,'#2b2140');p.px(13,13,'#fff');p.px(18,13,'#fff');p.rect(15,18,3,1,'#2b2140');
+  p.rect(11,16,2,1,'#ffc9de');p.rect(20,16,2,1,'#ffc9de');return p.outline().c},
+ hinotama(){const p=new Pix(32,32);p.tri(9,5,14,4,'#f76707');p.tri(16,1,16,5,'#f76707');p.tri(23,5,14,4,'#f76707');p.ell(16,20,10,9,'#f76707');
+  p.tri(12,9,10,3,'#ffa94d');p.tri(20,9,10,3,'#ffa94d');p.ell(16,21,7.4,6.6,'#ffa94d');p.ell(16,23,4.6,4,'#ffe066');
+  p.rect(12,18,2,3,'#2b2140');p.rect(18,18,2,3,'#2b2140');p.px(12,18,'#fff');p.px(18,18,'#fff');p.ell(16,24,1.7,1.3,'#c92a2a');p.rect(9,21,2,1,'#ff8787');p.rect(21,21,2,1,'#ff8787');return p.outline().c},
+ koumori(){const p=new Pix(32,32);p.ell(8,14,7.5,5,'#5f3dc4');p.ell(24,14,7.5,5,'#5f3dc4');for(const x of[3,7,25,29])p.ell(x,19,2,1.6,'#5f3dc4');
+  p.line(14,12,3,10,'#3b2a8f');p.line(14,14,5,17,'#3b2a8f');p.line(18,12,29,10,'#3b2a8f');p.line(18,14,27,17,'#3b2a8f');
+  p.tri(12,6,4,2,'#7048e8');p.tri(20,6,4,2,'#7048e8');p.ell(16,15,6.2,6,'#7048e8');p.ell(16,18,3.6,2.8,'#b197fc');
+  p.rect(13,13,2,2,'#ffe066');p.rect(18,13,2,2,'#ffe066');p.px(14,14,'#2b2140');p.px(18,14,'#2b2140');p.rect(14,17,5,1,'#2b2140');p.px(14,18,'#fff');p.px(18,18,'#fff');
+  p.rect(13,21,2,2,'#5f3dc4');p.rect(18,21,2,2,'#5f3dc4');return p.outline().c},
+ tokage(){const p=new Pix(40,32);p.ell(33,24,6.5,2.6,'#e8590c');p.ell(38,21,2.4,2,'#e8590c');
+  p.rect(12,25,3,5,'#c2410c');p.rect(27,25,3,5,'#c2410c');p.px(11,29,'#fff');p.px(26,29,'#fff');
+  p.ell(21,21,11,6.4,'#e8590c');p.ell(20,24.5,8,2.8,'#ffd8a8');for(let x=14;x<=30;x+=4)p.tri(x,13,3,1,'#c92a2a');
+  p.ell(20,18,1.7,1.4,'#ffd43b');p.ell(26,20,1.5,1.2,'#ffd43b');p.ell(15,20,1.2,1,'#ffd43b');
+  p.ell(9,17,7,6,'#f76707');p.ell(5,20,4.2,2.6,'#f76707');p.rect(7,14,3,3,'#fff');p.rect(8,15,2,2,'#2b2140');p.line(6,12,10,13,'#2b2140');
+  p.px(2,18,'#862e9c');p.line(2,21,8,21,'#862e9c');p.ell(1.5,13,1.4,1.2,'#adb5bd');p.ell(0.5,10,1,1,'#ced4da');return p.outline().c},
+ mogura(){const p=new Pix(32,32);p.ell(16,29,13,3,'#8b5a2b');p.ell(16,19,11,10,'#6b4423');p.ell(16,22,7,6,'#a9744f');
+  p.ell(5,22,3.6,3,'#ffc9c9');p.ell(27,22,3.6,3,'#ffc9c9');for(const x of[2,4,6,26,28,30])p.px(x,25,'#fff');
+  p.ell(16,8,8.4,4,'#ffd43b');p.rect(8,9,17,2,'#fab005');p.ell(16,6,1.9,1.6,'#fff9db');
+  p.ell(16,17,4.2,3,'#ffc9c9');p.ell(16,15.4,1.7,1.3,'#e64980');p.rect(11,12,2,2,'#2b2140');p.rect(19,12,2,2,'#2b2140');p.rect(15,19,3,1,'#862e9c');return p.outline().c},
+ fuwarin(){const p=new Pix(32,32);p.ell(5,16,2.2,1.6,'#f3f0ff');p.ell(27,15,2.2,1.6,'#f3f0ff');p.ell(16,14,10,10,'#f3f0ff');p.rect(6,14,21,10,'#f3f0ff');
+  for(let x=6;x<=24;x+=5)p.ell(x+2,24,2.6,2.2,'#f3f0ff');p.ell(22,15,3,7,'#e5dbff');p.ell(16,4.5,3.2,1.7,'#b197fc');p.px(16,4,'#e5dbff');
+  p.ell(12,13,2,2.6,'#2b2140');p.ell(20,13,2,2.6,'#2b2140');p.px(12,12,'#fff');p.px(20,12,'#fff');p.ell(16,18,2,1.5,'#ff8fab');p.rect(8,16,2,1,'#ffc9de');p.rect(23,16,2,1,'#ffc9de');return p.outline().c},
+ boss2(){const p=new Pix(48,48);p.ell(8,17,8,10,'#c92a2a');p.ell(40,17,8,10,'#c92a2a');p.ell(8,18,6,8,'#ff8787');p.ell(40,18,6,8,'#ff8787');
+  p.line(14,12,2,10,'#a61e1e');p.line(14,14,3,22,'#a61e1e');p.line(34,12,46,10,'#a61e1e');p.line(34,14,45,22,'#a61e1e');
+  p.ell(41,41,7,3,'#e03131');p.tri(46,33,6,2,'#ffd43b');
+  p.ell(15,44,5.5,3,'#c92a2a');p.ell(33,44,5.5,3,'#c92a2a');for(const x of[11,14,17,30,33,36])p.px(x,46,'#fff');
+  p.ell(24,32,13,12,'#e03131');p.ell(24,35,8,9,'#ffe066');for(const y of[30,34,38])p.rect(18,y,12,1,'#fab005');
+  p.ell(11,31,3.2,4.4,'#e03131');p.ell(37,31,3.2,4.4,'#e03131');p.px(9,35,'#fff');p.px(39,35,'#fff');
+  p.tri(15,1,8,2,'#fff3bf');p.tri(33,1,8,2,'#fff3bf');for(const x of[20,24,28])p.tri(x,3,3,1,'#ffd43b');
+  p.ell(24,15,11,9,'#ff6b6b');p.ell(18,11,4,2,'#ffa8a8');p.ell(24,20,7,4,'#ff8787');p.px(21,19,'#862e9c');p.px(27,19,'#862e9c');
+  p.ell(19,13,2.7,3,'#fff');p.ell(29,13,2.7,3,'#fff');p.rect(19,13,2,3,'#2b2140');p.rect(28,13,2,3,'#2b2140');p.line(15,9,21,11,'#862e9c');p.line(33,9,27,11,'#862e9c');
+  p.line(19,22,29,22,'#862e9c');p.px(21,23,'#fff');p.px(27,23,'#fff');p.rect(22,26,4,2,'#ffd43b');p.px(23,28,'#ffd43b');p.px(24,29,'#ffd43b');
+  return p.outline().c},
  boss(){const p=new Pix(48,48);p.ell(18,46,4.5,2,'#fff3d6');p.ell(30,46,4.5,2,'#fff3d6');p.ell(9,35,3.6,3,'#fff3d6');p.ell(39,35,3.6,3,'#fff3d6');
   p.rect(41,16,2,26,'#c9a227');p.ell(42,14,3.2,3.2,'#e03131');p.px(41,13,'#ffc9c9');
   p.ell(24,37,12,10,'#fff3d6');p.ell(27,39,7,7,'#ffe8cc');
@@ -383,8 +482,9 @@ function buildEnemies(){for(const k in EDRAW){const c=EDRAW[k]();ESPR[k]={c,whit
 const HERO=[
  {name:'ロミイ',spr:'romii',hp:[34,7],mp:[6,2],atk:[9,3],def:[5,2],spd:[6,1],spirits:['sala','gnome']},
  {name:'ササギ',spr:'sasagi',hp:[28,5],mp:[10,3],atk:[7,2],def:[4,1],spd:[8,2],spirits:['undine','jinn']},
+ {name:'ランディ',spr:'randy',hp:[42,9],mp:[0,0],atk:[12,4],def:[6,2],spd:[5,1],spirits:[]},
 ];
-const WEAPONS={'どうのやり':{atk:4},'てつのやり':{atk:10},'かわのむち':{atk:3},'ぎんのむち':{atk:9}};
+const WEAPONS={'どうのやり':{atk:4},'てつのやり':{atk:10},'はがねのやり':{atk:19},'かわのむち':{atk:3},'ぎんのむち':{atk:9},'ほのおのむち':{atk:17},'どうのけん':{atk:5},'てつのけん':{atk:12},'はがねのけん':{atk:22}};
 const SPIRITS={sala:{name:'サラマンダー',el:'fire',col:'#ff6b35'},gnome:{name:'ノーム',el:'earth',col:'#a9744f'},undine:{name:'ウンディーネ',el:'water',col:'#4dabf7'},jinn:{name:'ジン',el:'wind',col:'#96f2d7'}};
 const ELN={fire:'ほのお',earth:'つち',water:'みず',wind:'かぜ'};
 const SPELLS=[
@@ -395,14 +495,18 @@ const SPELLS=[
  {id:'jishin',name:'じしん',spirit:'gnome',lv:7,mp:6,type:'dmg',el:'earth',target:'all',pow:20,desc:'てき みんなを じめんごと ゆらす'},
  {id:'iwa',name:'いわなだれ',spirit:'gnome',lv:13,mp:10,type:'dmg',el:'earth',target:'all',pow:40,desc:'てき みんなに おおきな いわ'},
  {id:'iyashi',name:'いやしのみず',spirit:'undine',lv:1,mp:2,type:'heal',target:'ally',pow:30,field:true,desc:'なかま ひとりの HPを かいふく'},
+ {id:'mizu',name:'みずでっぽう',spirit:'undine',lv:7,mp:3,type:'dmg',el:'water',target:'one',pow:22,desc:'てき ひとりに みずの こうげき'},
  {id:'kiyome',name:'きよめのしずく',spirit:'undine',lv:3,mp:2,type:'cure',target:'ally',field:true,desc:'どく・ねむりを なおす'},
  {id:'ame',name:'いやしのあめ',spirit:'undine',lv:8,mp:6,type:'heal',target:'allies',pow:40,field:true,desc:'なかま みんなの HPを かいふく'},
+ {id:'oonami',name:'おおなみ',spirit:'undine',lv:11,mp:8,type:'dmg',el:'water',target:'all',pow:30,desc:'てき みんなに みずの こうげき'},
  {id:'hayate',name:'はやてのかぜ',spirit:'jinn',lv:2,mp:3,type:'haste',target:'allies',desc:'みんなの すばやさが あがる'},
  {id:'kama',name:'かまいたち',spirit:'jinn',lv:4,mp:3,type:'dmg',el:'wind',target:'one',pow:17,desc:'てき ひとりに かぜの こうげき'},
+ {id:'tatsumaki',name:'たつまき',spirit:'jinn',lv:10,mp:7,type:'dmg',el:'wind',target:'all',pow:28,desc:'てき みんなに かぜの こうげき'},
  {id:'mamori',name:'まもりのかぜ',spirit:'jinn',lv:6,mp:3,type:'guard',target:'allies',desc:'みんなの まもりが かたくなる'},
 ];
 const ITEMS={
  'かいふくおにぎり':{price:8,use:'hp',pow:40,target:'ally',battle:1,field:1,desc:'HPを 40 かいふく する'},
+ 'おおきなおにぎり':{price:30,use:'hp',pow:100,target:'ally',battle:1,field:1,desc:'HPを 100 かいふく する'},
  'かいふくのみず':{price:20,use:'mp',pow:15,target:'ally',battle:1,field:1,desc:'MPを 15 かいふく する'},
  'リフレッシュしばづけ':{price:10,use:'cure',target:'ally',battle:1,field:1,desc:'どく・ねむりを なおす'},
  'パターンはっけん':{price:25,use:'scan',target:'enemy',battle:1,desc:'てきの よわてんが わかる（せんとうで つかう）'},
@@ -412,8 +516,13 @@ const ITEMS={
  'せかいのず':{key:1,use:'map',field:1,desc:'せかいの ちずを みる'},
  'わたるはし':{key:1,use:'bridge',field:1,desc:'かわに はしを かける（かわの まえで つかう）'},
  'きんのネックレス':{key:1,use:'look',field:1,desc:'まちの たからもの。キラキラ ひかっている'},
+ 'ひかりのかぎ':{key:1,use:'look',field:1,desc:'おしろの バリアを ひらく ふしぎな かぎ',lookMsg:'ひかりのかぎ が やさしく ひかっている。\nおしろへ もっていこう！\n（みずうみの しまへは そらとぶとり で いけるよ）'},
  'てつのやり':{price:120,weapon:0,desc:'ロミイの やり（こうげき +10）'},
  'ぎんのむち':{price:100,weapon:1,desc:'ササギの むち（こうげき +9）'},
+ 'はがねのやり':{price:280,weapon:0,desc:'ロミイの やり（こうげき +19）'},
+ 'ほのおのむち':{price:240,weapon:1,desc:'ササギの むち（こうげき +17）'},
+ 'てつのけん':{price:150,weapon:2,desc:'ランディの けん（こうげき +12）'},
+ 'はがねのけん':{price:320,weapon:2,desc:'ランディの けん（こうげき +22）'},
 };
 const EN={
  pyon:{name:'ぴょんたん',hp:16,atk:8,def:2,spd:7,exp:4,gold:3,weak:'fire',acts:[['atk',3],['look',1]],drop:'かいふくおにぎり'},
@@ -426,11 +535,25 @@ const EN={
  happa:{name:'はっぱおばけ',hp:26,atk:13,def:5,spd:10,exp:11,gold:10,weak:'fire',acts:[['atk',3],['wind',1]],drop:'かいふくのみず'},
  hebi:{name:'にょろへび',hp:28,atk:14,def:6,spd:9,exp:12,gold:11,weak:'earth',acts:[['atk',2],['poison',2]],poisonMsg:'がぶっと かみついた！',drop:'リフレッシュしばづけ'},
  kuma:{name:'くまごろう',hp:52,atk:17,def:8,spd:5,exp:22,gold:20,weak:'earth',acts:[['atk',3],['strong',1]],drop:'かいふくおにぎり',big:1},
- boss:{name:'キノコだいおう',hp:240,atk:18,def:9,spd:6,exp:150,gold:120,weak:'fire',resist:'earth',acts:[['atk',3],['strong',2],['spore',2],['sleep',1],['heal',1]],sleepMsg:'ねむりの こな',boss:1},
+ boss:{name:'キノコだいおう',hp:300,atk:20,def:9,spd:6,exp:150,gold:120,weak:'fire',resist:'earth',acts:[['atk',3],['strong',2],['spore',2],['sleep',1],['heal',1]],sleepMsg:'ねむりの こな',boss:1},
+ kani:{name:'チョキチョキがに',hp:52,atk:24,def:20,spd:6,exp:29,gold:20,weak:'earth',acts:[['atk',3],['strong',1]],msg:{strong:'はさみで ちょっきん！'},drop:'かいふくおにぎり'},
+ kamome:{name:'カモメール',hp:38,atk:22,def:9,spd:15,exp:27,gold:17,weak:'wind',acts:[['atk',3],['multi',1]],msg:{multi:'くちばしで つんつん つついた！'},drop:'かいふくおにぎり'},
+ inoshishi:{name:'ドドドいのしし',hp:66,atk:27,def:13,spd:9,exp:34,gold:22,weak:'fire',acts:[['atk',2],['strong',2]],msg:{strong:'ドドドドッと とっしん して きた！'},drop:'おおきなおにぎり'},
+ tako:{name:'たこすけ',hp:54,atk:22,def:11,spd:8,exp:31,gold:21,weak:'earth',acts:[['atk',2],['multi',2]],msg:{multi:'８ぽんの あしで ペチペチ たたいた！'},drop:'かいふくのみず'},
+ saboten:{name:'トゲトゲサボ',hp:46,atk:23,def:15,spd:7,exp:29,gold:18,weak:'fire',acts:[['atk',2],['needle',1]],drop:'リフレッシュしばづけ'},
+ hinotama:{name:'メラメラくん',hp:44,atk:26,def:11,spd:13,exp:25,gold:16,weak:'water',resist:'fire',acts:[['atk',2],['breath',1]],breath:0.45,msg:{breath:'ひのこを まきちらした！'},drop:'かいふくのみず'},
+ koumori:{name:'パタパタこうもり',hp:40,atk:25,def:9,spd:17,exp:23,gold:15,weak:'wind',acts:[['atk',3],['sleep',1]],sleepMsg:'ちょうおんぱ',drop:'リフレッシュしばづけ'},
+ tokage:{name:'マグマトカゲ',hp:76,atk:30,def:17,spd:8,exp:34,gold:22,weak:'water',resist:'fire',acts:[['atk',2],['strong',1],['breath',1]],breath:0.55,msg:{breath:'マグマの いきを はいた！'},drop:'おおきなおにぎり',big:1},
+ mogura:{name:'もぐらどん',hp:64,atk:28,def:15,spd:7,exp:29,gold:19,weak:'wind',acts:[['atk',2],['strong',1],['dig',1]],msg:{strong:'つちの なかから とびだして きた！'},drop:'かいふくおにぎり'},
+ fuwarin:{name:'ふわりん',hp:48,atk:24,def:10,spd:11,exp:27,gold:18,weak:'earth',acts:[['atk',2],['sleep',2]],sleepMsg:'ふわふわ ダンス',drop:'かいふくのみず'},
+ boss2:{name:'ボルケーノドン',hp:1000,atk:36,def:24,spd:9,exp:300,gold:250,weak:'water',resist:'fire',acts:[['atk',3],['strong',2],['breath',2],['charge',1]],breath:0.75,msg:{breath:'ゴオオッと ほのおを はいた！',strong:'しっぽを ぶんっと ふりまわした！'},boss:1,double:0.5},
 };
 const ENC={
  west:[['pyon'],['pyon','pyon'],['puru'],['puru','pyon'],['hitsuji'],['puru','puru'],['pyon','hitsuji']],
  east:[['hachi'],['koro'],['pyon','hachi'],['hitsuji','puru'],['hachi','hachi'],['koro','pyon'],['puru','pyon','pyon'],['hachi','hitsuji']],
+ south:[['kani'],['kamome'],['kani','kamome'],['inoshishi'],['tako'],['saboten'],['tako','kamome'],['saboten','kani'],['kamome','kamome','kani'],['inoshishi','tako'],['kuma','kamome']],
+ volcano:[['hinotama'],['inoshishi','hinotama'],['koumori','koumori'],['tokage'],['saboten','hinotama'],['mogura'],['koumori','hinotama']],
+ cave:[['hinotama','hinotama'],['koumori','fuwarin'],['tokage'],['mogura','hinotama'],['fuwarin','fuwarin'],['tokage','koumori'],['mogura','mogura'],['hinotama','koumori','fuwarin'],['tokage','mogura']],
  forest:[['kinoko'],['kinoko','kinoko'],['odori','kinoko'],['happa'],['happa','odori'],['hebi'],['hebi','kinoko'],['kuma'],['odori','odori','kinoko'],['hachi','happa']],
 };
 const expNeed=lv=>lv<=1?0:Math.round(8*Math.pow(lv-1,1.9));
@@ -481,7 +604,67 @@ function genField(){
   for(let y=10;y<=22;y++)set(35,y,':');
   set(35,9,'F');
   for(const[,cx,cy]of FIELD_CHESTS)for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const x=cx+dx,y=cy+dy;if(inb(x,y)&&(g[y][x]==='T'||g[y][x]==='M'))g[y][x]='.'}
+  // だい２わ：みなみの トンネル
+  for(let y=23;y<=31;y++)set(10,y,':');for(const[x,y]of[[9,30],[11,30],[9,31],[11,31]])set(x,y,'.');set(10,32,'U');
   return g.map(r=>r.join(''));
+}
+const riverX2=y=>25+Math.round(Math.sin(y/3.7)*1.4);
+const coastY=x=>24+Math.round(Math.sin(x/4.3)*1.2);
+const FIELD2_CHESTS=[['g1',4,5,{item:'おおきなおにぎり',n:3}],['g2',15,7,{gold:120}],['g3',36,19,{item:'ぶんしんのひかり',n:2}],['g4',29,3,{item:'かいふくのみず',n:3}]];
+function genField2(){
+  const W=40,H=30,r=rng(77);const g=[...Array(H)].map(()=>Array(W).fill('.'));
+  const inb=(x,y)=>x>=0&&y>=0&&x<W&&y<H,set=(x,y,c)=>{if(inb(x,y))g[y][x]=c};
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const d=Math.min(x,y,W-1-x);if(d<2||(d===2&&r()<0.45)||(d===3&&r()<0.12))g[y][x]='M'}
+  for(let i=0;i<26;i++){const cx=3+Math.floor(r()*(W-6)),cy=3+Math.floor(r()*(H-9)),rad=1+r()*2.2;
+    for(let y=Math.floor(cy-rad);y<=cy+rad;y++)for(let x=Math.floor(cx-rad);x<=cx+rad;x++)if(inb(x,y)&&g[y][x]==='.'&&(x-cx)**2+(y-cy)**2<=rad*rad&&r()<0.85)g[y][x]='T'}
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(g[y][x]==='.'&&r()<0.06)g[y][x]=',';
+  for(let x=0;x<W;x++){const c=coastY(x);for(let y=c;y<H;y++)g[y][x]='~';set(x,c-1,'s');if(r()<0.5)set(x,c-2,'s')}
+  for(let y=0;y<H;y++){if(y>=coastY(riverX2(y)))break;const x=riverX2(y);set(x,y,'~');set(x+1,y,'~')}
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const d=Math.hypot(x-32,(y-6)*1.15);if(d<=4.2&&g[y][x]!=='~')g[y][x]='Y'}
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(Math.hypot(x-9,y-19)<=2.2&&g[y][x]!=='~')g[y][x]='.';
+  const path=(x,y)=>{if(inb(x,y)&&g[y][x]!=='~')g[y][x]=':'};
+  for(let y=2;y<=13;y++)path(20,y);for(let x=9;x<=20;x++)path(x,13);for(let y=13;y<=18;y++)path(9,y);
+  for(let x=21;x<=32;x++)path(x,13);for(let y=10;y<=13;y++)path(32,y);
+  for(const[x,y]of[[19,2],[21,2],[19,3],[21,3]])set(x,y,'.');
+  set(20,1,'U');set(9,19,'N');set(32,9,'V');
+  for(const[x,y]of[[7,4],[8,4],[9,4],[34,2],[35,2],[37,5],[37,6],[37,8],[36,14],[36,15],[36,16],[36,17]])set(x,y,'.');
+  for(const[,cx,cy]of FIELD2_CHESTS)for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const x=cx+dx,y=cy+dy;if(inb(x,y)&&'TMY'.includes(g[y][x]))g[y][x]='.'}
+  return g.map(r=>r.join(''));
+}
+const TOWN2_ROWS=[
+"TTTTTTTTTTT::TTTTTTTTTTT",
+"T,.........::.........,T",
+"T.WWWWWWW..::..WWWWWWW.T",
+"T.W_____W..::..W_____W.T",
+"T.W_KKK_W..::..W_KKK_W.T",
+"T.W_____W..::..W_____W.T",
+"T.WWW_WWW..::..WWW_WWW.T",
+"T...:::::::::::::::....T",
+"T..........::.......,..T",
+"T.WWWWW....::....WWWWW.T",
+"T.W___W....::....W___W.T",
+"T.WW_WW....::....WW_WW.T",
+"T,.........::.........,T",
+"Tssssssssss::ssssssssssT",
+"~~~~~~~~~~~==~~~~~~~~~~~",
+"~~~~~B~~~~~==~~~~~~B~~~~",
+"~~~~~~~~~~~==~~~~~~~~~~~",
+"~~~~~~~~~~~~~~~~~~~~~~~~"];
+function genCave(){
+  const W=29,H=26,oy=5,CW=14,CH=10,r=rng(99);const g=[...Array(H)].map(()=>Array(W).fill('R'));
+  const cell=(i,j)=>[2*i+1,oy+2*j+1];const vis=new Set(['7,9']);const stk=[[7,9]];{const[x,y]=cell(7,9);g[y][x]='.'}
+  while(stk.length){const[i,j]=stk[stk.length-1];const nb=[[1,0],[-1,0],[0,1],[0,-1]].map(([a,b])=>[i+a,j+b]).filter(([a,b])=>a>=0&&b>=0&&a<CW&&b<CH&&!vis.has(a+','+b));
+    if(!nb.length){stk.pop();continue}const[a,b]=nb[Math.floor(r()*nb.length)];vis.add(a+','+b);const[x1,y1]=cell(i,j),[x2,y2]=cell(a,b);g[y2][x2]='.';g[(y1+y2)/2][(x1+x2)/2]='.';stk.push([a,b])}
+  let k=0,guard=0;while(k<26&&guard++<600){const i=Math.floor(r()*CW),j=Math.floor(r()*CH);const d=r()<0.5?[1,0]:[0,1];const a=i+d[0],b=j+d[1];if(a>=CW||b>=CH)continue;const[x1,y1]=cell(i,j),[x2,y2]=cell(a,b);const wx=(x1+x2)/2,wy=(y1+y2)/2;if(g[wy][wx]==='R'){g[wy][wx]='.';k++}}
+  for(let y=1;y<=3;y++)for(let x=11;x<=19;x++)g[y][x]='.';g[4][15]='.';g[5][15]='.';g[25][15]='E';
+  const dist={};const q=[[15,24]];dist['15,24']=0;
+  while(q.length){const[x,y]=q.shift();for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]]){const X=x+dx,Y=y+dy;if(X<0||Y<0||X>=W||Y>=H||g[Y][X]==='R'||dist[X+','+Y]!=null)continue;dist[X+','+Y]=dist[x+','+y]+1;q.push([X,Y])}}
+  const dead=[];for(let y=oy;y<H-1;y++)for(let x=0;x<W;x++){if(g[y][x]!=='.')continue;let n=0;for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]])if(g[y+dy]&&g[y+dy][x+dx]&&g[y+dy][x+dx]!=='R')n++;if(n===1&&!(x===15&&y===24))dead.push([x,y,dist[x+','+y]||0])}
+  dead.sort((a,b)=>b[2]-a[2]);const chests=[];for(const d of dead){if(chests.length>=4)break;if(chests.some(c=>Math.abs(c[0]-d[0])+Math.abs(c[1]-d[1])<7))continue;chests.push(d)}
+  for(let y=1;y<H-1;y++)for(let x=1;x<W-1;x++){if(g[y][x]!=='R')continue;let fl=false;for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]])if(g[y+dy][x+dx]==='.')fl=true;if(fl&&r()<0.16)g[y][x]='L'}
+  for(const[x,y]of[[11,1],[19,1],[11,3],[19,3]])g[y][x]='L';
+  for(let y=oy;y<H-1;y++)for(let x=0;x<W;x++){if(g[y][x]!=='.'||chests.some(c=>c[0]===x&&c[1]===y))continue;if(r()<0.08)g[y][x]=','}
+  return{rows:g.map(r=>r.join('')),chests};
 }
 function genForest(){
   const W=25,H=24,oy=5,CW=12,CH=9,r=rng(42);const g=[...Array(H)].map(()=>Array(W).fill('T'));
@@ -499,17 +682,26 @@ function genForest(){
   return{rows:g.map(r=>r.join('')),chests};
 }
 const TILESET={
- field:{'.':'grass',',':'flowers','T':'tree','~':'water','=':'bridge','M':'mount',':':'path','H':'townIcon','F':'forestIcon','C':'castle'},
+ field:{'.':'grass',',':'flowers','T':'tree','~':'water','=':'bridge','M':'mount',':':'path','H':'townIcon','F':'forestIcon','C':'castle','U':'tunnel'},
+ field2:{'.':'grass',',':'flowers','T':'tree','~':'water','=':'bridge','M':'mount',':':'path','s':'sand','Y':'volc','N':'portIcon','V':'volcIcon','U':'tunnel'},
+ town2:{'.':'grass',',':'flowers','T':'palm','~':'water','W':'wall','_':'floor','K':'counter',':':'path','s':'sand','=':'pier','B':'boat'},
+ cave:{'.':'cfloor',',':'cfloor2','R':'rock','L':'lava','E':'cexit'},
  town:{'.':'grass',',':'flowers','T':'tree','~':'water','W':'wall','_':'floor','K':'counter',':':'path'},
  forest:{'.':'ffloor','T':'ftree','m':'fmush',',':'fflower','E':'fexit'},
 };
-const SOLID=new Set(['tree','water','mount','castle','wall','counter','ftree']);
-const FOREST=genForest();
+const SOLID=new Set(['tree','water','mount','castle','wall','counter','ftree','palm','volc','rock','lava','boat']);
+const FOREST=genForest(),CAVE=genCave();
 const MAPS={
- town:{rows:TOWN_ROWS,set:'town',song:'town',out:'tree',name:'ロイマイのまち'},
- field:{rows:genField(),set:'field',song:'field',out:'mount'},
- forest:{rows:FOREST.rows,set:'forest',song:'forest',out:'ftree',name:'きのこのもり'},
+ town:{rows:TOWN_ROWS,set:'town',song:'town',out:'tree',name:'ロイマイのまち',world:'field'},
+ field:{rows:genField(),set:'field',song:'field',out:'mount',name:'ロイマイのだいち',world:'field',over:1},
+ forest:{rows:FOREST.rows,set:'forest',song:'forest',out:'ftree',name:'きのこのもり',world:'field'},
+ town2:{rows:TOWN2_ROWS,set:'town2',song:'port',out:'water',name:'ミナトのまち',world:'field2'},
+ field2:{rows:genField2(),set:'field2',song:'field',out:'mount',name:'みなみのだいち',world:'field2',over:1},
+ cave:{rows:CAVE.rows,set:'cave',song:'cave',out:'rock',name:'ほのおのどうくつ',world:'field2'},
 };
+const ENTR={field:{H:['town',11,16,'up'],F:['forest',13,22,'up'],U:['field2',20,2,'down']},field2:{N:['town2',11,1,'down'],V:['cave',15,24,'up'],U:['field',10,31,'up']}};
+const EXITS={town:{test:(x,y)=>y>=17,to:['field',10,22,'down']},town2:{test:(x,y)=>y<=0,to:['field2',9,19,'down']},forest:{ch:'E',to:['field',35,9,'down']},cave:{ch:'E',to:['field2',32,9,'down']}};
+const SUBPOS={town:[10,22],forest:[35,9],town2:[9,19],cave:[32,9]};
 function resetMaps(){for(const id in MAPS){const m=MAPS[id];m.g=m.rows.map(r=>r.split(''));m.h=m.g.length;m.w=m.g[0].length}}
 resetMaps();
 const chOf=(m,x,y)=>(x<0||y<0||x>=m.w||y>=m.h)?null:m.g[y][x];
@@ -521,11 +713,12 @@ const OPP={up:'down',down:'up',left:'right',right:'left'};
 /* ================= STATE ================= */
 let S=null;
 const P={x:0,y:0,dir:'down',px:0,py:0,fx:0,fy:0,moving:false,t:0,dur:150,step:0};
-const Fo={x:0,y:0,dir:'down',px:0,py:0,fx:0,fy:0,moved:false};
+const FOL=[0,1].map(()=>({x:0,y:0,dir:'down',px:0,py:0,fx:0,fy:0,moved:false}));const Fo=FOL[0];
+const nFol=()=>S?Math.min(FOL.length,S.party.length-1):1;
 let mode='boot',busy=false,fading=false,encSteps=20,lastBump='';
-function mkHero(id){const h={id,lv:1,exp:0,weapon:id===0?'どうのやり':'かわのむち',st:{poison:0,sleep:0},b:null};h.hp=maxHP(h);h.mp=maxMP(h);h.name=HERO[id].name;return h}
+function mkHero(id){const h={id,lv:1,exp:0,weapon:['どうのやり','かわのむち','どうのけん'][id],st:{poison:0,sleep:0},b:null};h.hp=maxHP(h);h.mp=maxMP(h);h.name=HERO[id].name;return h}
 function newState(){return{party:[mkHero(0),mkHero(1)],gold:50,inv:{'かいふくおにぎり':3,'かいふくのみず':1},keys:[],flags:{},chests:{},bridges:[],visited:['roimai'],map:'town',time:0,scanned:{},fly:false}}
-const TOWNS={roimai:{name:'ロイマイのまち',map:'town',x:11,y:16,dir:'up'}};
+const TOWNS={roimai:{name:'ロイマイのまち',map:'town',x:11,y:16,dir:'up'},minato:{name:'ミナトのまち',map:'town2',x:11,y:1,dir:'down'}};
 function giveItem(n,c=1){if(ITEMS[n].key){if(!S.keys.includes(n))S.keys.push(n)}else S.inv[n]=(S.inv[n]||0)+c}
 const hasKey=n=>S.keys.includes(n);
 
@@ -550,6 +743,25 @@ function buildObjects(){
   OBJ.forest=FOREST.chests.map((c,i)=>chest('k'+i,c[0],c[1],fc[i]));
   OBJ.forest.push(npc('fairy','fairy',10,1,talkFairy));
   OBJ.forest.push(npc('boss','bossmini',13,2,talkBoss,{cond:()=>!S.flags.boss1}));
+  OBJ.field.push(npc('guard','guard',10,31,talkGuard,{dir:'up',cond:()=>!S.flags.ch1}));
+  OBJ.field.push(npc('guard2','guard',11,31,talkGuard2,{dir:'left',cond:()=>!!S.flags.ch1}));
+  OBJ.field2=FIELD2_CHESTS.map(([id,x,y,c])=>chest(id,x,y,c));
+  OBJ.town2=[
+    npc('inn','inn',5,3,talkInn),
+    npc('shop','shop',18,3,talkShop2),
+    npc('randy','randy',14,8,talkRandy,{dir:'left',cond:()=>!S.flags.randy}),
+    npc('fisher','man',12,16,talkFisher,{dir:'down'}),
+    npc('oldman','elder',4,10,talkOldman),
+    npc('girl2','girl2',19,10,talkGirl2),
+    npc('boy2','boy2',7,8,talkBoy2,{wander:2}),
+    npc('sailor','sailor',17,12,talkSailor,{wander:1}),
+    npc('cat','cat',21,12,talkCat2,{wander:2}),
+    chest('t2',20,1,{item:'おおきなおにぎり',n:2}),
+  ];
+  const cc=[{item:'おおきなおにぎり',n:3},{gold:150},{item:'ぶんしんのひかり',n:2},{item:'かいふくのみず',n:3}];
+  OBJ.cave=CAVE.chests.map((c,i)=>chest('c'+i,c[0],c[1],cc[i]));
+  OBJ.cave.push(npc('fairy','fairy',13,1,talkFairy2));
+  OBJ.cave.push(npc('boss','dragonmini',15,2,talkBoss2,{cond:()=>!S.flags.boss2}));
 }
 const objs=()=>(OBJ[S.map]||[]).filter(o=>!o.cond||o.cond());
 const objAt=(x,y)=>objs().find(o=>o.x===x&&o.y===y);
@@ -684,18 +896,26 @@ function clearUI(){uiStack.length=0;ui.innerHTML='';msgEl=null;helpEl=null}
 function goldWin(x=170,y=96,w=80){const e=win(x,y,w,null,'');e.style.fontSize=U(7.4);const up=()=>{e.innerHTML=`<div style="color:#ffe066;font-size:.85em">ゴールド</div><div style="text-align:right">${S.gold} G</div>`};up();return{el:e,update:up,close:()=>e.remove()}}
 function stName(h){if(h.hp<=0)return'きぜつ';if(h.st.sleep)return'ねむり';if(h.st.poison)return'どく';return'げんき'}
 async function pickAlly(title,o={}){
-  const items=S.party.map(h=>({label:h.name,right:o.mp?`MP ${h.mp}/${maxMP(h)}`:`HP ${h.hp}/${maxHP(h)}`}));
+  const items=S.party.map(h=>({label:h.name,right:o.mp?(maxMP(h)?`MP ${h.mp}/${maxMP(h)}`:'-'):`HP ${h.hp}/${maxHP(h)}`,disabled:(o.mp&&!maxMP(h))||(o.caster&&!HERO[h.id].spirits.length)}));
   const m=new Menu({x:o.x??92,y:o.y??40,w:118,items,title});const c=await m.choose();m.close();return c;
 }
 
 /* ================= MAP ENGINE ================= */
 function setMap(id,x,y,dir,fx,fy){
   S.map=id;P.x=x;P.y=y;P.dir=dir||'down';P.px=x*16;P.py=y*16;P.moving=false;
-  Fo.x=fx??x;Fo.y=fy??y;Fo.px=Fo.x*16;Fo.py=Fo.y*16;Fo.dir=P.dir;Fo.moved=false;lastBump='';
+  for(const f of FOL){f.x=fx??x;f.y=fy??y;f.px=f.x*16;f.py=f.y*16;f.dir=P.dir;f.moved=false}lastBump='';
   if(MAPS[id].song)playSong(MAPS[id].song);
   resetEnc();
 }
-function resetEnc(){encSteps=S&&S.map==='forest'?R(11,20):R(14,26)}
+function resetEnc(){const m=S&&S.map;encSteps=m==='cave'?R(11,20):m==='forest'?R(11,20):m==='field2'?R(11,20):R(14,26)}
+function encFor(){const m=S.map;
+  if(m==='field')return[P.x>riverX(P.y)+1?ENC.east:ENC.west,'field'];
+  if(m==='forest')return[ENC.forest,'forest'];
+  if(m==='field2')return P.x>riverX2(P.y)+1?[ENC.volcano,'volcano']:[ENC.south,'beach'];
+  if(m==='cave')return[ENC.cave,'cave'];return null}
+async function enterPlace(en){const[id,x,y,d]=en;await gotoMap(id,x,y,d,true);
+  if(id==='town2'&&!S.visited.includes('minato'))S.visited.push('minato');
+  if(id==='field2'&&!S.flags.south){S.flags.south=1;await talk(['ロミイ「わあ、うみの においが する！」','ササギ「ミナトのまち は、みなみの うみの ちかく みたい。」'])}}
 async function gotoMap(id,x,y,dir,show=true){await fadeOut(260);setMap(id,x,y,dir);await sleep(60);await fadeIn(260);if(show&&MAPS[id].name)banner(MAPS[id].name)}
 function canControl(){return mode==='map'&&!busy&&!fading&&uiStack.length===0}
 async function runScript(fn){if(busy)return;busy=true;try{await fn()}catch(e){console.error(e)}finally{hideMsg();help(null);busy=false}}
@@ -708,14 +928,16 @@ function tryMove(d){
   startMove(nx,ny);
 }
 function startMove(nx,ny){
-  P.fx=P.x;P.fy=P.y;Fo.fx=Fo.x;Fo.fy=Fo.y;const ox=P.x,oy=P.y;P.x=nx;P.y=ny;
-  Fo.moved=false;if(!(Fo.x===ox&&Fo.y===oy)){const dx=ox-Fo.x,dy=oy-Fo.y;Fo.dir=dx>0?'right':dx<0?'left':dy>0?'down':'up';Fo.x=ox;Fo.y=oy;Fo.moved=true}
+  P.fx=P.x;P.fy=P.y;let ax=P.x,ay=P.y;P.x=nx;P.y=ny;
+  for(const f of FOL){f.fx=f.x;f.fy=f.y;f.moved=false;const ox=f.x,oy=f.y;
+    if(!(f.x===ax&&f.y===ay)){const dx=ax-f.x,dy=ay-f.y;f.dir=dx>0?'right':dx<0?'left':dy>0?'down':'up';f.x=ax;f.y=ay;f.moved=true}
+    ax=ox;ay=oy}
   P.moving=true;P.t=0;P.dur=S.fly?95:150;P.step^=1;lastBump='';
 }
 function updateMap(dt){
   if(P.moving){P.t+=dt;const k=Math.min(1,P.t/P.dur);P.px=(P.fx+(P.x-P.fx)*k)*16;P.py=(P.fy+(P.y-P.fy)*k)*16;
-    if(Fo.moved){Fo.px=(Fo.fx+(Fo.x-Fo.fx)*k)*16;Fo.py=(Fo.fy+(Fo.y-Fo.fy)*k)*16}
-    if(k>=1){P.moving=false;Fo.px=Fo.x*16;Fo.py=Fo.y*16;onStepDone();if(!P.moving&&canControl()){const d=heldDir();if(d)tryMove(d)}}}
+    for(const f of FOL)if(f.moved){f.px=(f.fx+(f.x-f.fx)*k)*16;f.py=(f.fy+(f.y-f.fy)*k)*16}
+    if(k>=1){P.moving=false;for(const f of FOL){f.px=f.x*16;f.py=f.y*16}onStepDone();if(!P.moving&&canControl()){const d=heldDir();if(d)tryMove(d)}}}
   else if(canControl()){const d=heldDir();if(d)tryMove(d)}
   // npcs
   const m=MAPS[S.map];
@@ -724,28 +946,23 @@ function updateMap(dt){
     if(!o.wander||!canControl())continue;o.mt-=dt;if(o.mt>0)continue;o.mt=R(900,2600);
     const d=pick(['up','down','left','right']);const[dx,dy]=DIRV[d];const nx=o.x+dx,ny=o.y+dy;o.dir=d;
     if(Math.abs(nx-o.home[0])>o.wander||Math.abs(ny-o.home[1])>o.wander)continue;
-    if(!passable(m,nx,ny)||objAt(nx,ny)||(nx===P.x&&ny===P.y)||(nx===Fo.x&&ny===Fo.y)||tileName(m,nx,ny)==='floor')continue;
+    if(!passable(m,nx,ny)||objAt(nx,ny)||(nx===P.x&&ny===P.y)||FOL.some(f=>f.x===nx&&f.y===ny)||tileName(m,nx,ny)==='floor')continue;
     o.fx=o.x;o.fy=o.y;o.x=nx;o.y=ny;o.moving=true;o.t=0;
   }
 }
 function onStepDone(){
-  const m=MAPS[S.map],c=chOf(m,P.x,P.y);
-  if(S.map==='town'&&P.y>=17)return runScript(async()=>{await gotoMap('field',10,22,'down',false)});
-  if(S.map==='forest'&&c==='E')return runScript(async()=>{await gotoMap('field',35,9,'down',false)});
-  if(S.map==='field'&&!S.fly){
-    if(c==='H')return runScript(async()=>{await gotoMap('town',11,16,'up')});
-    if(c==='F')return runScript(async()=>{await gotoMap('forest',13,22,'up')});
-  }
-  if((S.map==='field'||S.map==='forest')&&!S.fly){
-    if(--encSteps<=0){resetEnc();const tbl=S.map==='forest'?ENC.forest:(P.x>riverX(P.y)+1?ENC.east:ENC.west);
-      return runScript(()=>battle(pick(tbl),{bg:S.map==='forest'?'forest':'field'}))}
-  }
+  const m=MAPS[S.map],c=chOf(m,P.x,P.y),ex=EXITS[S.map];
+  if(ex&&(ex.ch?c===ex.ch:ex.test(P.x,P.y)))return runScript(async()=>{await gotoMap(...ex.to,false)});
+  if(m.over&&!S.fly){const en=ENTR[S.map][c];if(en)return runScript(()=>enterPlace(en))}
+  if(!S.fly){const e=encFor();if(e&&--encSteps<=0){resetEnc();return runScript(()=>battle(pick(e[0]),{bg:e[1]}))}}
 }
 function onBump(x,y,d){
   const m=MAPS[S.map],n=tileName(m,x,y);
-  if(S.map==='field'&&n==='water')runScript(()=>bridgeAsk(x,y,d));
-  else if(S.map==='field'&&n==='castle')runScript(()=>talk(['おおきな おしろが ある。','でも ふしぎな ちからで とびらが ひらかない…','（この おしろは だい２わで いけるよ！）']));
+  if(m.over&&n==='water')runScript(()=>bridgeAsk(x,y,d));
+  else if(n==='castle')runScript(castleBump);
   else if(S.map==='town'&&n==='water')runScript(()=>say('いけだ。ちいさな おさかなが およいでいる。'));
+  else if(S.map==='town2'&&(n==='water'||n==='boat'))runScript(()=>say('ひろい うみだ！ ふねが ぷかぷか うかんでいる。'));
+  else if(n==='lava')runScript(()=>say('あつい！ ようがんだ！ ちかづかないように しよう。'));
 }
 async function bridgeAsk(x,y,d){
   if(!hasKey('わたるはし')){await say('みずが ながれている。このままでは わたれない…');return}
@@ -753,24 +970,25 @@ async function bridgeAsk(x,y,d){
   if(await yesno(176,86))await placeBridge(x,y,d);
 }
 async function placeBridge(x,y,d){
-  const m=MAPS.field,[dx,dy]=DIRV[d];const t=[];let cx=x,cy=y;
+  const m=MAPS[S.map],[dx,dy]=DIRV[d];const t=[];let cx=x,cy=y;
   while(chOf(m,cx,cy)==='~'&&t.length<3){t.push([cx,cy]);cx+=dx;cy+=dy}
   if(!t.length||t.length>2||!passable(m,cx,cy)||chOf(m,cx,cy)==='~'){await say('ここは みずが ひろすぎて、はしが とどかない みたい…');return}
-  for(const[a,b]of t){m.g[b][a]='=';S.bridges.push([a,b])}sfx('bridge');
+  for(const[a,b]of t){m.g[b][a]='=';S.bridges.push([a,b,S.map])}sfx('bridge');
   await say('わたるはし を かけた！\nこれで むこうに わたれるよ！');
 }
 async function interact(){
   if(S.fly)return land();
   const[dx,dy]=DIRV[P.dir];const tx=P.x+dx,ty=P.y+dy;let o=objAt(tx,ty);
   if(!o&&tileName(MAPS[S.map],tx,ty)==='counter')o=objAt(tx+dx,ty+dy);
-  if(o){if(o.type==='npc'&&o.id!=='cat'&&o.id!=='fairy'&&o.id!=='boss')o.dir=OPP[P.dir];await o.act(o);return}
+  if(o){if(o.type==='npc'&&!['cat','fairy','boss'].includes(o.id))o.dir=OPP[P.dir];await o.act(o);return}
   await mapMenu();
 }
 async function land(){
-  const m=MAPS.field,c=chOf(m,P.x,P.y);
-  if(!passable(m,P.x,P.y)){sfx('buzz');await say('ここには おりられないよ。\nくさや みちの うえで おりてね。',{speed:20});return}
-  S.fly=false;Fo.x=P.x;Fo.y=P.y;Fo.px=P.px;Fo.py=P.py;sfx('ok');
-  if(c==='H')await gotoMap('town',11,16,'up');else if(c==='F')await gotoMap('forest',13,22,'up');
+  const m=MAPS[S.map],c=chOf(m,P.x,P.y);
+  if(!passable(m,P.x,P.y)||objAt(P.x,P.y)){sfx('buzz');await say('ここには おりられないよ。\nくさや みちの うえで おりてね。',{speed:20});return}
+  if(c==='U'&&!S.flags.ch1){sfx('buzz');await say('トンネルは まだ とおれないみたい。\nほかの ところに おりてね。',{speed:20});return}
+  S.fly=false;for(const f of FOL){f.x=P.x;f.y=P.y;f.px=P.px;f.py=P.py;f.moved=false}sfx('ok');
+  const en=ENTR[S.map][c];if(en)await enterPlace(en);
   else await say('そらとぶとり から おりた。',{auto:700});
 }
 
@@ -808,20 +1026,20 @@ async function useItemField(n){
     S.inv[n]--;await applyHealItem(h,it,false);return;
   }
   if(it.use==='scan'||it.use==='clone'){await say('これは せんとうで つかう どうぐ だよ。');return}
-  if(it.use==='look'){await say(it.desc+'。\nはやく まちに もってかえろう！');return}
+  if(it.use==='look'){await say(it.lookMsg||(S.flags.ch1?it.desc+'。\nちょうろうも よろこんで くれた！':it.desc+'。\nはやく まちに もってかえろう！'));return}
   if(it.use==='map'){await showWorldMap();return}
   if(it.use==='bridge'){
-    if(S.map!=='field'){await say('ここでは つかえないよ。');return}
-    const[dx,dy]=DIRV[P.dir];if(tileName(MAPS.field,P.x+dx,P.y+dy)!=='water'){await say('かわの まえで、かわの ほうを むいて つかってね。');return}
+    if(!MAPS[S.map].over){await say('ここでは つかえないよ。');return}
+    const[dx,dy]=DIRV[P.dir];if(tileName(MAPS[S.map],P.x+dx,P.y+dy)!=='water'){await say('かわの まえで、かわの ほうを むいて つかってね。');return}
     await placeBridge(P.x+dx,P.y+dy,P.dir);return'close';
   }
   if(it.use==='fly'){
-    if(S.map!=='field'){await say('ここでは とべないよ。\nそとの ひろい ところで つかってね。');return}
+    if(!MAPS[S.map].over){await say('ここでは とべないよ。\nそとの ひろい ところで つかってね。');return}
     S.fly=true;sfx('warp');await say('そらとぶとり を よんだ！\nそらを とんで いけるよ！');await say('（おりたい ところで けってい を おしてね）');return'close';
   }
   if(it.use==='warp'){
-    if(S.map==='town'){await say('ここは もう まちの なか だよ。');return}
-    const towns=S.visited.map(k=>TOWNS[k]);const m=new Menu({x:60,y:40,w:136,title:'どこへ いく？',items:towns.map(t=>({label:t.name}))});
+    const towns=S.visited.map(k=>TOWNS[k]).filter(t=>t.map!==S.map);
+    if(!towns.length){await say('ここは もう まちの なか だよ。');return}const m=new Menu({x:60,y:40,w:136,title:'どこへ いく？',items:towns.map(t=>({label:t.name}))});
     const c=await m.choose();m.close();if(c<0)return;S.inv[n]--;S.fly=false;sfx('warp');
     await say('ワープのひも を つかった！',{auto:700});const t=towns[c];await gotoMap(t.map,t.x,t.y,t.dir);return'close';
   }
@@ -833,7 +1051,7 @@ async function applyHealItem(h,it,battle){
   else if(it.use==='cure'){sfx('heal');if(h.st.poison||h.st.sleep){h.st.poison=0;h.st.sleep=0;await say(`${h.name}は すっきり げんきに なった！`,sy)}else await say(`ポリポリ… おいしい！\n${h.name}は もともと げんき だった。`,sy)}
 }
 async function fieldSpells(){
-  const ci=await pickAlly('だれが つかう？',{mp:true,x:96,y:30});if(ci<0)return;const h=S.party[ci];
+  const ci=await pickAlly('だれが つかう？',{mp:true,caster:true,x:96,y:30});if(ci<0)return;const h=S.party[ci];
   const r=await chooseSpell(h,false);if(!r)return;const sp=r.sp;
   h.mp-=sp.mp;sfx('summon');await say(`${h.name}は ${SPIRITS[sp.spirit].name}を よんだ！\n${sp.name}！`,{auto:900});
   const targets=sp.target==='allies'?S.party:[S.party[r.t]];
@@ -841,26 +1059,29 @@ async function fieldSpells(){
     else if(sp.type==='cure'){x.st.poison=0;x.st.sleep=0;sfx('heal');await say(`${x.name}は すっきり した！`)}}
 }
 async function showStatus(){
-  sfx('ok');const w=win(8,6,240,168,'stat');
-  const col=h=>{const nx=h.lv>=30?0:expNeed(h.lv+1)-h.exp;return`<div><div class="nm">${h.name}</div>
-  <div class="ln"><span>レベル</span><span>${h.lv}</span></div><div class="ln"><span>HP</span><span>${Math.max(0,h.hp)} / ${maxHP(h)}</span></div><div class="ln"><span>MP</span><span>${h.mp} / ${maxMP(h)}</span></div>
+  sfx('ok');const n3=S.party.length>=3;const w=win(n3?4:8,6,n3?248:240,n3?180:168,'stat'+(n3?' s3':''));
+  const col=h=>{const nx=h.lv>=30?0:expNeed(h.lv+1)-h.exp;const sp=HERO[h.id].spirits.map(s=>SPIRITS[s].name).join(n3?'<br>':'・')||'なし';return`<div><div class="nm">${h.name}</div>
+  <div class="ln"><span>レベル</span><span>${h.lv}</span></div><div class="ln"><span>HP</span><span>${Math.max(0,h.hp)} / ${maxHP(h)}</span></div><div class="ln"><span>MP</span><span>${maxMP(h)?h.mp+' / '+maxMP(h):'-'}</span></div>
   <div class="ln"><span>こうげき</span><span>${heroAtk(h)}</span></div><div class="ln"><span>ぼうぎょ</span><span>${st(h,'def')}</span></div><div class="ln"><span>すばやさ</span><span>${st(h,'spd')}</span></div>
-  <div class="ln"><span>つぎの レベルまで</span><span>${nx}</span></div><div class="ln"><span>ぶき</span><span>${h.weapon}</span></div><div class="ln"><span>せいれい</span><span>${HERO[h.id].spirits.map(s=>SPIRITS[s].name).join('・')}</span></div></div>`};
+  <div class="ln"><span>${n3?'つぎのLvまで':'つぎの レベルまで'}</span><span>${nx}</span></div><div class="ln"><span>ぶき</span><span>${h.weapon}</span></div>${n3?`<div class="ln"><span>せいれい</span></div><div class="ln sp"><span></span><span>${sp}</span></div>`:`<div class="ln"><span>せいれい</span><span>${sp}</span></div>`}</div>`};
   const mins=Math.floor(S.time/60);
-  w.innerHTML=`<div class="cols">${col(S.party[0])}${col(S.party[1])}</div><div class="ft"><span>ゴールド ${S.gold} G</span><span>プレイじかん ${mins} ふん</span></div>`;
+  w.innerHTML=`<div class="cols" style="grid-template-columns:repeat(${S.party.length},1fr)">${S.party.map(col).join('')}</div><div class="ft"><span>ゴールド ${S.gold} G</span><span>プレイじかん ${mins} ふん</span></div>`;
   w.querySelectorAll('.ln span:first-child').forEach(e=>e.style.color='#d8d2ff');
   await waitKey(['a','b','v']);w.remove();sfx('cancel');
 }
 async function showWorldMap(){
-  sfx('ok');const m=MAPS.field,sc=4;const w=win(22,4,212,184,'wmap');w.innerHTML='<div style="color:#ffe066">せかいのず</div>';
+  sfx('ok');const wid=MAPS[S.map].world,m=MAPS[wid],sc=4;const w=win(22,4,212,184,'wmap');w.innerHTML=`<div style="color:#ffe066">せかいのず（${m.name}）</div>`;
+  const cw=m.w*sc*0.9,ox=6+(212-12-2.8-cw)/2;
   const[cv2,g2]=mk(m.w*sc,m.h*sc);cv2.style.width=U(m.w*sc*0.9);cv2.style.height=U(m.h*sc*0.9);w.appendChild(cv2);
-  const COL={grass:'#8fe05e',flowers:'#8fe05e',tree:'#2f9e44',water:'#4dabf7',bridge:'#c08a52',mount:'#9c6f45',path:'#f3d58f',townIcon:'#ff6b6b',forestIcon:'#145a2c',castle:'#9775fa'};
+  const COL={grass:'#8fe05e',flowers:'#8fe05e',tree:'#2f9e44',water:'#4dabf7',bridge:'#c08a52',mount:'#9c6f45',path:'#f3d58f',townIcon:'#ff6b6b',forestIcon:'#145a2c',castle:'#9775fa',tunnel:'#343a40',sand:'#ffe8a3',volc:'#7a3b1d',portIcon:'#ff6b6b',volcIcon:'#e8590c'};
   for(let y=0;y<m.h;y++)for(let x=0;x<m.w;x++){g2.fillStyle=COL[tileName(m,x,y)]||'#000';g2.fillRect(x*sc,y*sc,sc,sc)}
-  for(const[x,y,c]of[[10,22,'#ff6b6b'],[35,9,'#e03131'],[37,27,'#7048e8']]){g2.fillStyle='#fff';g2.fillRect(x*sc-2,y*sc-2,sc+4,sc+4);g2.fillStyle=c;g2.fillRect(x*sc-1,y*sc-1,sc+2,sc+2)}
-  const lbl=(t,x,y)=>{const d=document.createElement('div');d.className='lbl';d.textContent=t;d.style.left=U(22-22+12+x*sc*0.9+0);d.style.top=U(18+y*sc*0.9);w.appendChild(d)};
-  lbl('ロイマイのまち',10,22);lbl('きのこのもり',35,9);lbl('おしろ',37,27);
-  let px=P.x,py=P.y;if(S.map==='town'){px=10;py=22}else if(S.map==='forest'){px=35;py=9}
-  const dot=document.createElement('div');Object.assign(dot.style,{position:'absolute',width:U(5),height:U(5),borderRadius:'50%',background:'#ffe066',border:`${U(1)} solid #e03131`,left:U(12+px*sc*0.9-0.5),top:U(18+py*sc*0.9-0.5),animation:'blink .5s steps(2) infinite'});w.appendChild(dot);
+  const LB={field:[['ロイマイのまち',10,22,'#ff6b6b'],['きのこのもり',35,9,'#e03131'],['おしろ',37,27,'#7048e8']].concat(S.flags.ch1?[['トンネル',10,32,'#343a40']]:[]),
+    field2:[['ミナトのまち',9,19,'#ff6b6b'],['ほのおのやま',32,9,'#e8590c'],['トンネル',20,1,'#343a40']]}[wid];
+  for(const[,x,y,c]of LB){g2.fillStyle='#fff';g2.fillRect(x*sc-2,y*sc-2,sc+4,sc+4);g2.fillStyle=c;g2.fillRect(x*sc-1,y*sc-1,sc+2,sc+2)}
+  const lbl=(t,x,y)=>{const d=document.createElement('div');d.className='lbl';d.textContent=t;d.style.left=U(ox+(x+0.5)*sc*0.9);d.style.top=U(18+y*sc*0.9);w.appendChild(d)};
+  for(const[t,x,y]of LB)lbl(t,x,y);
+  let[px,py]=SUBPOS[S.map]||[P.x,P.y];
+  const dot=document.createElement('div');Object.assign(dot.style,{position:'absolute',width:U(5),height:U(5),borderRadius:'50%',background:'#ffe066',border:`${U(1)} solid #e03131`,left:U(ox+(px+0.5)*sc*0.9-3.5),top:U(18+(py+0.5)*sc*0.9-3.5),animation:'blink .5s steps(2) infinite'});w.appendChild(dot);
   const tip=document.createElement('div');tip.style.cssText=`font-size:${U(6)};margin-top:${U(2)};color:#d8d2ff`;tip.textContent='きいろい まるが いまの ばしょ';w.appendChild(tip);
   await waitKey(['a','b','v']);w.remove();sfx('cancel');
 }
@@ -878,7 +1099,7 @@ function loadGame(){
   try{const d=JSON.parse(lsGet(SAVEKEY));if(!d)return false;S=newState();
     S.party=d.party.map(p=>{const h=mkHero(p.id);Object.assign(h,{lv:p.lv,exp:p.exp,hp:p.hp,mp:p.mp,weapon:p.weapon});return h});
     Object.assign(S,{gold:d.gold,inv:d.inv,keys:d.keys,flags:d.flags,chests:d.chests,bridges:d.bridges||[],visited:d.visited,time:d.time||0,scanned:d.scanned||{}});
-    resetMaps();for(const[x,y]of S.bridges)MAPS.field.g[y][x]='=';buildObjects();setMap(d.map,d.x,d.y,d.dir);return true}catch(e){console.error(e);return false}
+    resetMaps();for(const[x,y,mp]of S.bridges)MAPS[mp||'field'].g[y][x]='=';buildObjects();setMap(d.map,d.x,d.y,d.dir);return true}catch(e){console.error(e);return false}
 }
 
 /* ---- town / npc talks ---- */
@@ -893,37 +1114,42 @@ async function openChest(o){
 async function talkElder(){
   if(!S.flags.intro)return;
   if(S.flags.boss1&&!S.flags.ch1)return chapterEnd();
-  if(S.flags.ch1)return talk(['ちょうろう「つぎは こばんじゃ。」','「アイデルマイラドメの おしろは、みなみひがしの みずうみの なかに あるそうじゃ…」','（だい２わを おたのしみに！）']);
+  if(S.flags.ch2)return talk(['ちょうろう「おお、バリアが きえたと？ ランディ どの も ありがとう。」','「いよいよ アイデルマイラドメの おしろじゃな… きを つけるのじゃぞ。」','（だい３わを おたのしみに！）']);
+  if(S.flags.ch1)return talk(['ちょうろう「おしろには ふしぎな バリアが あって はいれぬのじゃ。」','「バリアを ひらくには ひかりのかぎ が いる。」','「みなみの トンネルを ぬけた さきの ミナトのまち で、はなしを きいて みなさい。」','「トンネルは この まちの すぐ みなみじゃ。へいたいさんには はなしておいたぞ。」']);
   await talk(['ちょうろう「ひがしの きのこのもり に、キノコだいおう が おるはずじゃ。」','「かわに ぶつかったら、わたるはし を つかうのじゃぞ。」']);
 }
 async function talkInn(){
-  await say('やどやの おねえさん「いらっしゃい！\nひとばん 10ゴールド だよ。とまって いく？」',{speed:22});
+  const price=S.map==='town2'?20:10;
+  await say(`やどやの おねえさん「いらっしゃい！\nひとばん ${price}ゴールド だよ。とまって いく？」`,{speed:22});
   if(!(await yesno(176,78))){await say('「また きてね！」');return}
-  if(S.gold<10){sfx('buzz');await say('「あらら、おかねが たりないみたい…」');return}
-  S.gold-=10;hideMsg();await fadeOut(500);stopSong();await jingle('inn');
+  if(S.gold<price){sfx('buzz');await say('「あらら、おかねが たりないみたい…」');return}
+  S.gold-=price;hideMsg();await fadeOut(500);stopSong();await jingle('inn');
   for(const h of S.party){h.hp=maxHP(h);h.mp=maxMP(h);h.st={poison:0,sleep:0}}
-  await fadeIn(500);playSong('town');
+  await fadeIn(500);playSong(MAPS[S.map].song);
   await say('「おはよう！ げんきに なったね！」');
   await say('「ぼうけんを きろく していく？」');if(await yesno(176,78)){const ok=saveGame();sfx(ok?'chest':'buzz');await say(ok?'ぼうけんを きろく しました！':'きろく できなかった…')}
   await say('「いってらっしゃい！」');
 }
-async function talkShop(){
+function talkShop(){return shopWith(['かいふくおにぎり','かいふくのみず','リフレッシュしばづけ','パターンはっけん','ワープのひも','ぶんしんのひかり','てつのやり','ぎんのむち'])}
+function talkShop2(){return shopWith(['かいふくおにぎり','おおきなおにぎり','かいふくのみず','リフレッシュしばづけ','パターンはっけん','ワープのひも','ぶんしんのひかり','てつのけん','はがねのけん','はがねのやり','ほのおのむち'])}
+async function shopWith(goods){
   await say('どうぐやの おじさん「いらっしゃい！\nなにを かうかい？」',{speed:22});
-  const goods=['かいふくおにぎり','かいふくのみず','リフレッシュしばづけ','パターンはっけん','ワープのひも','ぶんしんのひかり','てつのやり','ぎんのむち'];
   const gw=goldWin(170,6,80);let last=0;hideMsg();
   while(true){
     const m=new Menu({x:6,y:6,w:160,rows:8,initial:last,title:'かう',items:goods.map(n=>({label:n,right:ITEMS[n].price+'G'})),onMove:i=>help(ITEMS[goods[i]].desc)});
     const c=await m.choose();m.close();help(null);if(c<0)break;last=c;const n=goods[c],it=ITEMS[n];
-    if(it.weapon!=null&&S.party[it.weapon].weapon===n){sfx('buzz');await say('「それは もう もってるね！」');continue}
+    const wh=it.weapon!=null?S.party.find(x=>x.id===it.weapon):null;
+    if(it.weapon!=null&&!wh){sfx('buzz');await say('「その ぶきを つかえる なかまが いないね。」');continue}
+    if(wh&&wh.weapon===n){sfx('buzz');await say('「それは もう もってるね！」');continue}
     if(S.gold<it.price){sfx('buzz');await say('「おかねが たりないよ。」');continue}
     S.gold-=it.price;gw.update();sfx('buy');
-    if(it.weapon!=null){const h=S.party[it.weapon];h.weapon=n;await say(`まいど あり！\n${h.name}は ${n}を そうびした！`)}
+    if(wh){const h=wh;h.weapon=n;await say(`まいど あり！\n${h.name}は ${n}を そうびした！`)}
     else{giveItem(n,1);await say(`まいど あり！ ${n}を かった！\n（いま ${S.inv[n]}こ もってるよ）`,{auto:900,speed:15})}
   }
   gw.close();await say('「また きてね！」');
 }
 async function talkGirl(){if(S.flags.boss1)return say('おんなのこ「ネックレス とりもどしたの？ すごーい！」');await talk(['おんなのこ「ササギの むち って かっこいいね！」','「ロミイの やりも つよそう！」'])}
-async function talkBoy(){if(S.flags.boss1)return say('おとこのこ「つぎは ぼくも つれてって！」');await talk(['おとこのこ「まちの そとには ぴょんたん が いるよ。」','「かわいい けど、たたかって くるんだ！」'])}
+async function talkBoy(){if(S.flags.randy)return say('おとこのこ「あたらしい なかま？ かっこいい けん だね！」');if(S.flags.ch1)return say('おとこのこ「みなみの トンネル、とおれるように なったって！」');if(S.flags.boss1)return say('おとこのこ「つぎは ぼくも つれてって！」');await talk(['おとこのこ「まちの そとには ぴょんたん が いるよ。」','「かわいい けど、たたかって くるんだ！」'])}
 async function talkMan(){await talk(['おじさん「かわに ぶつかったら、わたるはし を だしてみな。」','「みじかい かわなら、どこにでも はしが かけられるぞ。」'])}
 async function talkWoman(){await talk(['おばさん「せいれいの まほうは MPを つかうのよ。」','「MPが へったら かいふくのみず を のんでね。」','「つよい てきには ぶんしんのひかり も いいわよ。2かい こうげき できるの！」'])}
 async function talkCat(){await talk(['ねこ「にゃーん。」','ねこは ロミイの あしに すりすり した。'])}
@@ -937,6 +1163,45 @@ async function talkBoss(o){
   await talk(['きんのネックレス を とりもどした！','ロミイ「やったね、ササギ！」','ササギ「まちに もどって、ちょうろうに みせよう！」','（ワープのひも や そらとぶとり を つかうと はやく かえれるよ）']);
 }
 
+async function talkGuard(){await talk(['へいたいさん「この さきは みなみへ いく トンネル だよ。」','「いまは あぶないから とおれないんだ。」','「ちょうろうさまの おゆるしが でたら とおして あげるよ。」'])}
+async function talkGuard2(){await talk(['へいたいさん「ちょうろうさまから きいたよ！」','「トンネルを ぬけると みなみの だいち だ。きを つけて いってらっしゃい！」'])}
+async function talkRandy(){
+  await talk(['けんしの おとこのこ「やあ！ ぼくは ランディ。この まちの けんし だよ。」','ランディ「ほのおのやまの ボルケーノドンが あばれて、ふねが うみに でられないんだ。」','ロミイ「わたしたち、ボルケーノドンが もってる ひかりのかぎ を さがしてるの！」','ササギ「アイデルマイラドメの おしろの バリアを ひらく かぎ なんだって。」','ランディ「それなら いっしょに いこう！\nぼくの けんで みんなを まもるよ！」']);
+  const lv=Math.max(...S.party.map(h=>h.lv));const h=mkHero(2);h.lv=lv;h.weapon='てつのけん';h.exp=expNeed(lv);h.hp=maxHP(h);h.mp=0;S.party.push(h);S.flags.randy=1;
+  const f=FOL[1];f.x=FOL[0].x;f.y=FOL[0].y;f.px=f.x*16;f.py=f.y*16;f.dir=FOL[0].dir;
+  stopSong();const j=jingle('lvup');banner('ランディが なかまに なった！');await say('ランディが なかまに なった！');await j;playSong(MAPS[S.map].song,{force:true});
+  await talk(['（ランディは まほうは つかえないけど、ちからもち で HPも おおいよ。）','ランディ「ほのおのやま は かわの むこう、ひがしの ほうだよ。」','ランディ「どうぐやで もっと つよい ぶきも かえるよ！」']);
+}
+async function talkFisher(){await talk(['つりびと「ほのおのやま へは、この まちを でて きたへ もどり、ひがしの かわを わたるんだ。」','「わたるはし は もってるかい？」'])}
+async function talkOldman(){if(S.flags.boss2)return talk(['おじいさん「ボルケーノドンを たおしたとな！ たいした もんじゃ！」']);await talk(['おじいさん「ウンディーネの まほうは かいふく だけじゃ ないぞ。」','「レベル7 くらいで みずの こうげき「みずでっぽう」が つかえるように なるはずじゃ。」'])}
+async function talkGirl2(){if(S.flags.boss2)return talk(['おんなのこ「ありがとう！ これで パパの ふねも うみに でられるよ！」']);await talk(['おんなのこ「ボルケーノドンは みずが にがて なんだって！」','「でも ほのおは ぜんぜん きかないの。」'])}
+async function talkBoy2(){if(S.flags.randy)return talk(['おとこのこ「ランディ、がんばってね！」']);await talk(['おとこのこ「ひろばに いる ランディは、この まちで いちばん つよい けんし なんだよ！」'])}
+async function talkSailor(){await talk(['ふなのり「ボルケーノドンは ときどき ちからを ためるんだ。」','「ためた つぎは すごい こうげきが くるぞ！ そのときは ぼうぎょ するんだ！」'])}
+async function talkCat2(){await talk(['ねこ「にゃあ〜。」','ねこは おさかなを くわえて いる。'])}
+async function talkFairy2(){sfx('heal');for(const h of S.party){h.hp=maxHP(h);h.mp=maxMP(h);h.st={poison:0,sleep:0}}await talk(['どうくつの ようせい「あつい なか よく きたね！ げんきに してあげる！」','HPと MPが ぜんぶ かいふく した！','ようせい「この さきに ボルケーノドンが いるよ。みずの まほうが よく きくよ！」','ようせい「ちからを ためたら、みんなで ぼうぎょ してね！」'])}
+async function talkBoss2(){
+  await talk(['ボルケーノドン「グオオオ！ ここは おれさまの すみか だ！」','「ひかりのかぎ は、アイデルマイラドメさまから あずかった だいじな かぎ！」','「ほしければ、おれさまを たおして みろ！」']);
+  const r=await battle(['boss2'],{bg:'boss2',boss:true,song:'boss2'});
+  if(r!=='win')return;
+  await talk(['ボルケーノドン「グ… グオォ… まいった…」','「かぎは… もって いけ…」','ボルケーノドンは ちいさく なって、どうくつの おくへ にげて いった。']);
+  S.flags.boss2=1;giveItem('ひかりのかぎ');jingle('item').then(()=>playSong('cave',{force:true}));
+  await talk(['ひかりのかぎ を てにいれた！','ランディ「やったね！ これで ふねも うみに でられる！」','ロミイ「ひかりのかぎ で おしろの バリアを ひらこう！」','ササギ「おしろは みずうみの まんなか… そらとぶとり なら いけるね！」']);
+  if(!hasKey('そらとぶとり')){await talk(['ランディ「とりが いないの？ じゃあ ぼくの ともだちの とりを よんで あげる！」']);giveItem('そらとぶとり');sfx('chest');await say('そらとぶとり を てにいれた！')}
+  await talk(['（ワープのひも で ロイマイのまち に もどり、そらとぶとり で みずうみの しまに おりて みよう）']);
+}
+async function castleBump(){
+  if(S.flags.ch2)return talk(['おしろの とびらは しずかに しまっている…','（おしろの なかは だい３わ で いけるよ！）']);
+  if(hasKey('ひかりのかぎ'))return chapter2End();
+  await talk(['おおきな おしろが ある。','でも ふしぎな バリアで とびらが ひらかない…',S.flags.ch1?'（ひかりのかぎ が あれば ひらけそうだ）':'（この おしろは だい２わで いけるよ！）']);
+}
+async function chapter2End(){
+  await say('ひかりのかぎ が まぶしく ひかりだした！');
+  sfx('warp');for(let i=0;i<3;i++){await fadeTo(0.9,120,'#fff');await fadeTo(0,160)}
+  await say('おしろを つつんでいた バリアが きえた！');
+  stopSong();playSong('boss',{force:true});
+  await talk(['？？？「ふふふ… よくぞ ここまで きたな。」','アイデルマイラドメ「わたしは アイデルマイラドメ。こばんは わたしの ものだ！」','「とりかえしたければ、おしろの おくまで くるが いい…！」','ロミイ「ぜったい こばんを とりもどすよ！」','ササギ「３にんなら まけないんだから！」','ランディ「いこう、みんな！」']);
+  S.flags.ch2=1;await endScreen('だい２わ おしまい',S.map,P.x,P.y,P.dir);
+}
 /* ---- story ---- */
 async function intro(){
   mode='map';await say('ここは ロイマイワールド。',{pos:'center'});
@@ -952,17 +1217,21 @@ async function intro(){
 }
 async function chapterEnd(){
   await talk(['ちょうろう「おお！ それは きんのネックレス！」','「ロミイ、ササギ、ほんとうに ありがとう！」','「じゃが こばんは まだ… アイデルマイラドメの おしろに あるらしい。」','「みなみひがしの みずうみの なかに ある おしろじゃ。いまは ふしぎな ちからで はいれぬが…」','ロミイ「つぎは こばんを とりもどすぞ！」','ササギ「アイデルマイラドメ、まってなさい！」']);
-  S.flags.ch1=1;hideMsg();await fadeOut(700);mode='ending';clearUI();playSong('title',{force:true});
+  S.flags.ch1=1;await endScreen('だい１わ おしまい','town',3,13,'up',4,13);
+}
+async function endScreen(title,map,x,y,dir,fx,fy){
+  hideMsg();await fadeOut(700);mode='ending';clearUI();playSong('title',{force:true});
   const mins=Math.floor(S.time/60);
-  ui.innerHTML=`<div class="ttl end1">だい１わ おしまい</div><div class="ttl end2">〜 つづく 〜</div><div class="ttl end3">ロミイ レベル ${S.party[0].lv}　ササギ レベル ${S.party[1].lv}<br>プレイじかん ${mins} ふん</div><div class="ttl hint">けってい で つづける</div>`;
-  await fadeIn(700);await sleep(800);await waitKey(['a']);sfx('ok');await fadeOut(500);clearUI();mode='map';setMap('town',3,13,'up',4,13);await fadeIn(500);
+  ui.innerHTML=`<div class="ttl end1">${title}</div><div class="ttl end2">〜 つづく 〜</div><div class="ttl end3">${S.party.map(h=>h.name+' レベル '+h.lv).join('　')}<br>プレイじかん ${mins} ふん</div><div class="ttl hint">けってい で つづける</div>`;
+  await fadeIn(700);await sleep(800);await waitKey(['a']);sfx('ok');await fadeOut(500);clearUI();mode='map';setMap(map,x,y,dir,fx,fy);await fadeIn(500);
   await say('ぼうけんを きろく しますか？');if(await yesno(176,86)){const ok=saveGame();sfx(ok?'chest':'buzz');await say(ok?'ぼうけんを きろく しました！':'きろく できなかった…')}
 }
 
 /* ================= BATTLE ================= */
 let B=null;
-const HPOS=[[204,52],[222,84]];
-function popAt(t,text,cls){if(t.id!=null&&HERO[t.id]&&S.party.includes(t)){const i=S.party.indexOf(t);popup(text,HPOS[i][0]+16,HPOS[i][1]+8,cls)}else popup(text,t.x,t.y-t.hgt+10,cls)}
+const HPOS2=[[204,52],[222,84]],HPOS3=[[202,36],[222,64],[204,92]];
+const hpos=i=>(S.party.length>=3?HPOS3:HPOS2)[i];
+function popAt(t,text,cls){if(t.id!=null&&HERO[t.id]&&S.party.includes(t)){const i=S.party.indexOf(t);popup(text,hpos(i)[0]+16,hpos(i)[1]+8,cls)}else popup(text,t.x,t.y-t.hgt+10,cls)}
 function fx(dur,draw){return new Promise(res=>{B.fx.push({t0:performance.now(),dur,draw,res})})}
 function aliveE(){return B.en.filter(e=>e.alive)}
 function aliveH(){return S.party.filter(h=>h.hp>0)}
@@ -979,7 +1248,7 @@ async function battle(kinds,opt={}){
   for(const h of S.party)h.b={haste:0,guard:0,clone:0,defend:false,ox:0,oy:0,flash:0};
   stopSong();sfx('enc');
   for(let i=0;i<2;i++){await fadeTo(0.85,80,'#fff');await fadeTo(0,80)}
-  await fadeOut(220,'#000');mode='battle';playSong(opt.boss?'boss':'battle',{force:true});
+  await fadeOut(220,'#000');mode='battle';playSong(opt.song||(opt.boss?'boss':'battle'),{force:true});
   B.ui={party:win(108,134,144,54,'bp'),enemy:win(4,134,100,54,'be')};updBUI();
   await fadeIn(260);
   const names=[...new Set(B.en.map(e=>e.d.name))].join(' と ');
@@ -998,7 +1267,11 @@ async function battle(kinds,opt={}){
 }
 function updBUI(){
   if(!B||!B.ui)return;
-  B.ui.party.innerHTML=S.party.map(h=>{const low=h.hp>0&&h.hp<=maxHP(h)/4;const cls=h.hp<=0?'ko':low?'low':'';
+  const p3=S.party.length>=3;B.ui.party.classList.toggle('p3',p3);
+  if(p3){B.ui.party.innerHTML=S.party.map(h=>{const low=h.hp>0&&h.hp<=maxHP(h)/4;const cls=h.hp<=0?'ko':low?'low':'';
+    const tg=h.hp<=0?'<span class="tag k">きぜつ</span>':h.st.sleep?'<span class="tag s">ねむり</span>':h.st.poison?'<span class="tag p">どく</span>':(h.b&&h.b.clone>0)?'<span class="tag s">ぶんしん</span>':'';
+    return`<div class="r3 ${B.actor===h?'act':''} ${cls}"><span>${B.actor===h?'▶':''}${h.name}</span><span>HP <b>${Math.max(0,h.hp)}</b>/${maxHP(h)}</span><span>${maxMP(h)?`MP <b>${h.mp}</b>`:''}</span><span>${tg}</span></div>`}).join('')}
+  else B.ui.party.innerHTML=S.party.map(h=>{const low=h.hp>0&&h.hp<=maxHP(h)/4;const cls=h.hp<=0?'ko':low?'low':'';
     const tags=(h.st.poison?'<span class="tag p">どく</span>':'')+(h.st.sleep?'<span class="tag s">ねむり</span>':'')+(h.hp<=0?'<span class="tag k">きぜつ</span>':'')+(h.b&&h.b.clone>0?'<span class="tag s">ぶんしん</span>':'');
     return`<div class="row ${B.actor===h?'act':''} ${cls}"><span>${B.actor===h?'▶':''}${h.name} <span style="font-size:.8em">Lv${h.lv}</span></span><span>${tags}</span></div><div class="row2 ${cls}"><span>HP <b>${Math.max(0,h.hp)}</b>/${maxHP(h)}</span><span>MP <b>${h.mp}</b></span></div>`}).join('');
   const groups={};for(const e of aliveE())groups[e.d.name]=(groups[e.d.name]||0)+1;
@@ -1006,7 +1279,7 @@ function updBUI(){
 }
 function canAct(h){return h.hp>0}
 async function battleRound(){
-  const acts=[];const able=[0,1].filter(i=>canAct(S.party[i]));let k=0;
+  const acts=[];const able=S.party.map((_,i)=>i).filter(i=>canAct(S.party[i]));let k=0;
   while(k<able.length){const i=able[k],h=S.party[i];
     if(h.st.sleep){acts.push({type:'asleep',who:i});k++;continue}
     const a=await chooseCmd(i,k>0);
@@ -1020,7 +1293,9 @@ async function battleRound(){
     await say('しかし まわりこまれて しまった！',{pos:'top',auto:1000,speed:20});acts.length=0;
   }
   for(const a of acts)if(a.type==='defend')S.party[a.who].b.defend=true;
-  for(const e of aliveE())acts.push({type:'enemy',e});
+  B.round=(B.round||0)+1;
+  for(const e of aliveE()){acts.push({type:'enemy',e});
+    if(e.d.double&&e.hp<=e.max*e.d.double){if(!e.angry){e.angry=1;sfx('earth');B.shake=8;await say(`${e.name}は おこった！\nこうげきが 2かいに なった！`,{pos:'top',auto:1400,speed:16})}acts.push({type:'enemy',e})}}
   for(const a of acts){const s=a.type==='enemy'?a.e.spd:heroSpd(S.party[a.who]);a.ord=(a.type==='defend'?999:0)+s*(0.75+Math.random()*0.5)}
   acts.sort((a,b)=>b.ord-a.ord);
   for(const a of acts){if(endCheck())break;await doAction(a);updBUI()}
@@ -1040,13 +1315,15 @@ async function battleRound(){
 function endCheck(){if(!aliveE().length)return'win';if(!aliveH().length)return'lose';return null}
 async function chooseCmd(i,canBack){
   const h=S.party[i];B.actor=h;updBUI();h.b.ox=-10;label(`${h.name}は どうする？`);
-  const items=[{label:'たたかう'},{label:'せいれい'},{label:'どうぐ'},{label:'ぼうぎょ'},{label:'にげる',disabled:!!B.opt.boss}];
+  const mag=HERO[h.id].spirits.length>0;
+  const items=[{label:'たたかう',k:'atk'},...(mag?[{label:'せいれい',k:'sp'}]:[]),{label:'どうぐ',k:'item'},{label:'ぼうぎょ',k:'def'},{label:'にげる',k:'run',disabled:!!B.opt.boss}];
   const m=new Menu({x:4,y:134,w:100,h:54,cols:2,items,title:h.name,initial:h.lastCmd||0,cancel:canBack});m.el.style.fontSize=U(7.4);m.el.style.zIndex=2;
   const done=a=>{m.close();h.b.ox=0;hideMsg();h.lastCmd=m.idx;return a};
   while(true){
     label(`${h.name}は どうする？`);
-    const c=await m.choose();
-    if(c===-1){m.close();h.b.ox=0;return'back'}
+    const ci=await m.choose();
+    if(ci===-1){m.close();h.b.ox=0;return'back'}
+    const c=['atk','sp','item','def','run'].indexOf(items[ci].k);
     if(c===0){const t=await pickTarget('enemy');if(t<0)continue;return done({type:'attack',who:i,t})}
     if(c===1){const r=await chooseSpell(h,true);if(!r)continue;return done({type:'spell',who:i,sp:r.sp,t:r.t})}
     if(c===2){const r=await chooseItemBattle(i);if(!r)continue;return done({type:'item',who:i,item:r.item,t:r.t})}
@@ -1061,7 +1338,7 @@ function targetLabel(kind,list,p,all){
 }
 function pickTarget(kind,all=false){
   return new Promise(res=>{
-    const list=kind==='enemy'?B.en.map((e,i)=>e.alive?i:-1).filter(i=>i>=0):[0,1];let p=0;
+    const list=kind==='enemy'?B.en.map((e,i)=>e.alive?i:-1).filter(i=>i>=0):S.party.map((_,i)=>i);let p=0;
     if(kind==='ally'&&B.actor){const ai=S.party.indexOf(B.actor);p=Math.max(0,list.indexOf(ai))}
     B.cur={kind,list,p,all};targetLabel(kind,list,p,all);
     const layer={onKey(b){
@@ -1147,7 +1424,7 @@ function elemFx(targets,el){
     else{const r=4+(i%4)*4;g.fillRect(x+Math.cos(a)*r,y+10-((p*50+i*5)%34),2,2)}}}});
 }
 const eT=e=>({cx:e.x,cy:e.y-e.hgt/2});
-const hT=h=>{const i=S.party.indexOf(h);return{cx:HPOS[i][0]+16,cy:HPOS[i][1]+16}};
+const hT=h=>{const i=S.party.indexOf(h);return{cx:hpos(i)[0]+16,cy:hpos(i)[1]+16}};
 async function summonFx(h,sp){
   const s=SPIRITS[sp];const{cx,cy}=hT(h);sfx('summon');
   await fx(550,(g,p)=>{g.globalAlpha=Math.sin(p*Math.PI);g.fillStyle=s.col;const r=6+p*10;g.beginPath();g.arc(cx-24,cy-14,r,0,7);g.fill();g.fillStyle='#fff';g.fillRect(cx-28,cy-16,2,3);g.fillRect(cx-22,cy-16,2,3);g.globalAlpha=1});
@@ -1196,7 +1473,8 @@ async function castSpell(h,sp,t){
 }
 async function useItemBattle(h,n,t){
   if(!S.inv[n]){await bsay(`${n}は もう ない！`,600);return}
-  S.inv[n]--;const it=ITEMS[n];await bsay(`${h.name}は ${n}を つかった！`,450);
+  const it=ITEMS[n];if(it.use==='mp'&&t!=null&&S.party[t]&&!maxMP(S.party[t])){await bsay(`${S.party[t].name}には MPが ない みたい。`,700);return}
+  S.inv[n]--;await bsay(`${h.name}は ${n}を つかった！`,450);
   if(it.use==='hp'||it.use==='mp'||it.use==='cure'){const x=S.party[t];await elemFx([hT(x)],'heal');await applyHealItem(x,it,true);updBUI()}
   else if(it.use==='scan'){const e=B.en[fixE(t)];sfx('scan');await fx(500,(g,p)=>{g.strokeStyle='#ffe066';g.lineWidth=1;const r=30*(1-p)+8;g.strokeRect(e.x-r,e.y-e.hgt/2-r,r*2,r*2)});S.scanned[e.k]=1;
     const sp=Object.values(SPIRITS).find(s=>s.el===e.d.weak);await say(`${e.d.name}の よわてんは… ${ELN[e.d.weak]}！\n${sp.name}の まほうが よく きくよ！`,{pos:'top'});}
@@ -1206,16 +1484,27 @@ function wpick(acts){const tot=acts.reduce((s,a)=>s+a[1],0);let r=Math.random()*
 async function enemyLunge(e){await fx(120,(g,p)=>{e.flash=p<0.5?1:0});e.flash=0;await fx(160,(g,p)=>{e.ox=Math.sin(p*Math.PI)*14})}
 async function enemyAct(e){
   if(!e.alive)return;const tgts=aliveH();if(!tgts.length)return;
-  let act=wpick(e.d.acts);const tgt=pick(tgts);
+  let act=wpick(e.d.acts);const tgt=pick(tgts);let pow=1;const M=e.d.msg||{};
   if(act==='heal'&&e.hp>e.max*0.6)act='atk';
   if(act==='sleep'&&tgts.every(h=>h.st.sleep))act='atk';
+  if(act==='charge'&&e.charged)act='atk';
+  if(e.charged&&B.round>e.charged){e.charged=0;act='strong';pow=1.8;await bsay(`${e.name}は ためた ちからを ときはなった！`,600)}
+  else if(e.charged&&act==='strong')act='atk';
+  const hit=async(h,mult)=>{let d=physDmg(e.atk*mult,heroDef(h));if(h.b.defend)d=Math.max(1,Math.floor(d/2));await damageHero(h,d)};
   switch(act){
+  case'dig':await bsay(`${e.name}は じめんに もぐって かくれた！`,650);break;
+  case'charge':e.charged=B.round;sfx('buff');await fx(600,(g,p)=>{g.globalAlpha=Math.sin(p*Math.PI)*0.6;g.fillStyle='#ff6b35';g.beginPath();g.arc(e.x,e.y-e.hgt/2,e.w*0.55*(0.6+p*0.4),0,7);g.fill();g.globalAlpha=1});
+    await say(`${e.name}は ちからを ためている…！\n（つぎは すごい こうげきが くるよ！ ぼうぎょ しよう！）`,{pos:'top',auto:1800,speed:16});break;
+  case'multi':{await bsay(`${e.name}は ${M.multi||'れんぞく こうげき！'}`,420);for(let i=0;i<2;i++){const t=aliveH();if(!t.length)break;await enemyLunge(e);await hit(pick(t),0.65)}break}
+  case'needle':{await bsay(`${e.name}は トゲを とばした！`,420);sfx('wind');for(const h of tgts){if(h.hp>0)await hit(h,0.55)}break}
+  case'breath':{await bsay(`${e.name}は ${M.breath||'ほのおを はいた！'}`,450);await elemFx(tgts.map(hT),'fire');
+    for(const h of tgts){if(h.hp<=0)continue;let d=physDmg(e.atk*(e.d.breath||0.6),heroDef(h)*0.4);if(h.b.defend)d=Math.max(1,Math.floor(d/2));await damageHero(h,d)}break}
   case'look':await bsay(`${e.name}は ようすを みている。`,650);break;
   case'dance':await bsay(`${e.name}は へんな おどりを おどっている！`,700);break;
   case'atk':case'bounce':case'strong':case'poison':{
-    const msg={atk:`${e.name}の こうげき！`,bounce:`${e.name}は ぽよーんと とびかかった！`,strong:`${e.name}は おもいきり ぶつかって きた！`,poison:`${e.name}は ${e.d.poisonMsg||'どくこうげき！'}`}[act];
+    const msg=M[act]?`${e.name}は ${M[act]}`:{atk:`${e.name}の こうげき！`,bounce:`${e.name}は ぽよーんと とびかかった！`,strong:`${e.name}は おもいきり ぶつかって きた！`,poison:`${e.name}は ${e.d.poisonMsg||'どくこうげき！'}`}[act];
     await bsay(msg,380);await enemyLunge(e);
-    const mult={atk:1,bounce:1.3,strong:1.6,poison:0.8}[act];let d=physDmg(e.atk*mult,heroDef(tgt));if(tgt.b.defend)d=Math.max(1,Math.floor(d/2));
+    const mult={atk:1,bounce:1.3,strong:1.6,poison:0.8}[act]*pow;let d=physDmg(e.atk*mult,heroDef(tgt));if(tgt.b.defend)d=Math.max(1,Math.floor(d/2));
     await damageHero(tgt,d);
     if(act==='poison'&&tgt.hp>0&&!tgt.st.poison&&Math.random()<0.5){tgt.st.poison=1;sfx('poison');updBUI();await bsay(`${tgt.name}は どくに なった！`,700)}
     break}
@@ -1247,7 +1536,7 @@ async function defeat(){
   stopSong();const p=jingle('lose');await say('ロミイたちは たおれて しまった…',{pos:'top'});await p;
   await fadeOut(600);clearUI();B.ui=null;
   for(const h of S.party){h.hp=maxHP(h);h.mp=maxMP(h);h.st={poison:0,sleep:0}}
-  mode='map';S.fly=false;setMap('town',5,5,'up');await fadeIn(500);
+  mode='map';S.fly=false;const south=MAPS[S.map].world==='field2'&&S.visited.includes('minato');setMap(south?'town2':'town',5,5,'up');await fadeIn(500);
   await talk(['……','やどやの おねえさん「だいじょうぶ？ まちの そとで たおれて いたのよ。」','「げんきに なるまで やすませて あげたわ。きを つけてね！」','（おかねは へって いないよ。レベルを あげて また ちょうせん しよう！）']);
   hideMsg();await fadeOut(10);
 }
@@ -1259,13 +1548,13 @@ function renderMap(t){
   let cx=W<=256?Math.round((W-256)/2):clamp(Math.round(P.px+8-128),0,W-256);
   let cy=H<=192?Math.round((H-192)/2):clamp(Math.round(P.py+8-96),0,H-192);
   const wf=Math.floor(t/600)%2,tx0=Math.floor(cx/16),ty0=Math.floor(cy/16);
-  for(let ty=ty0;ty<=ty0+12;ty++)for(let tx=tx0;tx<=tx0+16;tx++){let n=tileName(m,tx,ty);if(n==='water')n='water'+wf;g.drawImage(T[n],tx*16-cx,ty*16-cy)}
+  for(let ty=ty0;ty<=ty0+12;ty++)for(let tx=tx0;tx<=tx0+16;tx++){let n=tileName(m,tx,ty);if(n==='water'||n==='lava')n=n+wf;g.drawImage(T[n],tx*16-cx,ty*16-cy)}
   const ents=[];
   for(const o of objs())ents.push([o.py,()=>{const x=Math.round(o.px-cx),y=Math.round(o.py-cy);
     if(o.type==='chest')g.drawImage(S.chests[o.id]?SPR.chestO:SPR.chestC,x,y);
     else{const fr=o.moving?(Math.floor(o.t/130)%2?1:2):0;const bob=(o.id==='fairy')?Math.round(Math.sin(t/300)*1.5):0;g.drawImage(SPR[o.spr][o.dir][fr],x,y+bob)}}]);
   const fr=P.moving?(P.t/P.dur<0.5?(P.step?1:2):0):0;
-  if(!S.fly){ents.push([Fo.py-0.1,()=>g.drawImage(SPR.sasagi[Fo.dir][Fo.moved?fr:0],Math.round(Fo.px-cx),Math.round(Fo.py-cy))]);
+  if(!S.fly){for(let i=nFol()-1;i>=0;i--){const f=FOL[i],sp=SPR[HERO[S.party[i+1].id].spr];ents.push([f.py-0.1-i*0.01,()=>g.drawImage(sp[f.dir][f.moved?fr:0],Math.round(f.px-cx),Math.round(f.py-cy))])}
     ents.push([P.py,()=>g.drawImage(SPR.romii[P.dir][fr],Math.round(P.px-cx),Math.round(P.py-cy))])}
   ents.sort((a,b)=>a[0]-b[0]);for(const e of ents)e[1]();
   if(S.fly){const x=Math.round(P.px-cx),y=Math.round(P.py-cy);g.fillStyle='rgba(0,0,0,.25)';g.fillRect(x+2,y+12,12,3);g.fillRect(x+4,y+11,8,5);
@@ -1283,6 +1572,20 @@ function drawBattleBg(t){
     g.fillStyle='rgba(255,255,200,.08)';for(let i=0;i<4;i++){g.beginPath();g.moveTo(40+i*60,0);g.lineTo(60+i*60,0);g.lineTo(90+i*60,96);g.lineTo(60+i*60,96);g.fill()}
     g.fillStyle='#6a9f58';g.fillRect(0,86,256,106);g.fillStyle='#5c8f4b';for(let y=92;y<192;y+=10)for(let x=(y/10%2)*12;x<256;x+=24)g.fillRect(x,y,6,2);
     for(const[x,y]of[[16,98],[240,104],[180,92]]){g.fillStyle='#fff3d6';g.fillRect(x,y,2,4);g.fillStyle='#ff6b6b';g.fillRect(x-2,y-2,6,3)}}
+  else if(bg==='beach'){const gr=g.createLinearGradient(0,0,0,60);gr.addColorStop(0,'#74c0fc');gr.addColorStop(1,'#d0ebff');g.fillStyle=gr;g.fillRect(0,0,256,60);
+    g.fillStyle='#fff';for(const[x,y,w]of[[40,16,34],[170,10,40]]){g.fillRect(x,y,w,6);g.fillRect(x+5,y-4,w-10,4)}
+    g.fillStyle='#339af0';g.fillRect(0,60,256,26);g.fillStyle='#a5d8ff';for(let i=0;i<10;i++){const x=(i*29+t/40)%270-10;g.fillRect(x,66+(i%3)*6,10,1)}
+    g.fillStyle='#ffe8a3';g.fillRect(0,86,256,106);g.fillStyle='#fff';g.fillRect(0,86,256,2);g.fillStyle='#f2c96b';for(let y=94;y<192;y+=10)for(let x=(y/10%2)*12;x<256;x+=24)g.fillRect(x,y,4,2);
+    g.fillStyle='#ff8cc6';g.fillRect(30,110,3,2);g.fillStyle='#fff';g.fillRect(232,102,3,3)}
+  else if(bg==='volcano'){const gr=g.createLinearGradient(0,0,0,90);gr.addColorStop(0,'#ff922b');gr.addColorStop(1,'#ffd8a8');g.fillStyle=gr;g.fillRect(0,0,256,90);
+    g.fillStyle='#6b3420';g.beginPath();g.moveTo(60,90);g.lineTo(118,20);g.lineTo(140,20);g.lineTo(200,90);g.fill();g.fillStyle='#ff6b35';g.fillRect(118,18,22,4);
+    g.fillStyle='rgba(120,120,120,.5)';for(let i=0;i<3;i++){g.beginPath();g.arc(128+i*6,10-((t/60+i*10)%14),5+i,0,7);g.fill()}
+    g.fillStyle='#8b5a2b';g.fillRect(0,86,256,106);g.fillStyle='#7a4a26';for(let y=92;y<192;y+=10)for(let x=(y/10%2)*12;x<256;x+=24)g.fillRect(x,y,6,2)}
+  else if(bg==='cave'||bg==='boss2'){g.fillStyle='#2b1d18';g.fillRect(0,0,256,192);g.fillStyle='#3d2a24';for(let i=0;i<10;i++){const x=i*28+4;g.beginPath();g.moveTo(x,0);g.lineTo(x+14,0);g.lineTo(x+7,14+(i%3)*8);g.fill()}
+    g.fillStyle='#5c3a2e';g.fillRect(0,92,256,100);g.fillStyle='#4a2e24';for(let y=98;y<192;y+=10)for(let x=(y/10%2)*12;x<256;x+=24)g.fillRect(x,y,6,2);
+    const gl=0.25+0.12*Math.sin(t/300);g.fillStyle=`rgba(255,107,53,${gl})`;g.fillRect(0,84,256,10);
+    if(bg==='boss2'){for(const[x,y,w]of[[10,150,40],[200,160,50],[120,180,60]]){g.fillStyle='#e8590c';g.fillRect(x,y,w,8);g.fillStyle='#ffd43b';g.fillRect(x+4+((t/80)%(w-12)),y+3,6,2)}
+      g.fillStyle=`rgba(255,80,40,${0.12+0.06*Math.sin(t/200)})`;g.fillRect(0,0,256,192)}}
   else{const gr=g.createLinearGradient(0,0,0,100);gr.addColorStop(0,'#2b1b55');gr.addColorStop(1,'#5f3dc4');g.fillStyle=gr;g.fillRect(0,0,256,100);
     for(let i=0;i<8;i++){const x=i*36+8;g.fillStyle='rgba(255,169,77,'+(0.25+0.15*Math.sin(t/400+i))+')';g.beginPath();g.arc(x,40+Math.sin(i)*10,10,Math.PI,0);g.fill();g.fillStyle='rgba(255,243,214,.35)';g.fillRect(x-2,40+Math.sin(i)*10,4,14)}
     g.fillStyle='#3b2a5c';g.fillRect(0,96,256,96);g.fillStyle='#4c3a75';for(let y=100;y<192;y+=10)for(let x=(y/10%2)*12;x<256;x+=24)g.fillRect(x,y,6,2)}
@@ -1293,8 +1596,8 @@ function renderBattle(t){
   for(let i=0;i<B.en.length;i++){const e=B.en[i];if(e.alpha<=0)continue;const s=ESPR[e.k];const x=Math.round(e.x-e.w/2+e.ox),y=Math.round(e.y-e.hgt+e.oy+(e.d.boss?Math.sin(t/500)*2:0));
     g.fillStyle='rgba(0,0,0,.18)';g.fillRect(e.x-e.w/3,e.y-3,e.w*2/3,4);
     g.globalAlpha=e.alpha;if(e.alpha<1&&Math.floor(t/50)%2)g.globalAlpha=e.alpha*0.4;g.drawImage(e.flash?s.white:s.c,x,y,e.w,e.hgt);g.globalAlpha=1}
-  S.party.forEach((h,i)=>{if(!h.b)return;const[x0,y0]=HPOS[i];const x=x0+h.b.ox+sh,y=y0;
-    const spr=SPR[HERO[i].spr];
+  S.party.forEach((h,i)=>{if(!h.b)return;const[x0,y0]=hpos(i);const x=x0+h.b.ox+sh,y=y0;
+    const spr=SPR[HERO[h.id].spr];
     if(h.hp<=0){g.save();g.globalAlpha=0.65;g.translate(x+16,y+30);g.rotate(-Math.PI/2);g.drawImage(spr.left[0],-16,-16,32,32);g.restore();g.globalAlpha=1;return}
     if(h.b.clone>0){g.globalAlpha=0.45;g.drawImage(spr.left[Math.floor(t/300)%2?1:2],x+10,y-6,32,32);g.globalAlpha=1}
     if(h.b.flash)return;
@@ -1307,7 +1610,7 @@ function renderBattle(t){
     if(h.b.guard>0){g.strokeStyle='rgba(255,224,102,.55)';g.lineWidth=1;g.strokeRect(x+1,y+1,30,30)}
   });
   if(B.cur){const blink=Math.floor(t/250)%2;const pts=B.cur.all?B.cur.list:[B.cur.list[B.cur.p]];
-    for(const i of pts){let x,y;if(B.cur.kind==='enemy'){const e=B.en[i];x=e.x;y=e.y-e.hgt-4}else{x=HPOS[i][0]+16;y=HPOS[i][1]-4}
+    for(const i of pts){let x,y;if(B.cur.kind==='enemy'){const e=B.en[i];x=e.x;y=e.y-e.hgt-4}else{x=hpos(i)[0]+16;y=hpos(i)[1]-4}
       y+=blink;g.fillStyle='#ffe066';for(let r=0;r<5;r++)g.fillRect(x-5+r,y-6+r,11-2*r,1);g.fillStyle=OUT;g.fillRect(x-6,y-7,13,1)}}
   const now=performance.now();
   for(let i=B.fx.length-1;i>=0;i--){const f=B.fx[i];const p=(now-f.t0)/f.dur;if(p>=1){B.fx.splice(i,1);f.draw(g,1);f.res()}else{g.save();f.draw(g,p);g.restore()}}
@@ -1327,7 +1630,7 @@ function renderEnding(t){
   for(let i=0;i<40;i++){const x=(i*53)%256,y=(i*37)%110;g.fillStyle=(Math.floor(t/300+i)%3)?'#fff':'#ffe066';g.fillRect(x,y,1,1)}
   g.fillStyle='#69db7c';g.fillRect(0,170,256,22);
   const cx=128,cy=150;for(let i=0;i<8;i++){const a=t/600+i*Math.PI/4;g.fillStyle='#ffe066';g.fillRect(cx+Math.cos(a)*14,cy-24+Math.sin(a)*8,2,2)}
-  g.drawImage(SPR.romii.down[0],96,138,32,32);g.drawImage(SPR.sasagi.down[0],128,138,32,32);
+  const n=S?S.party.length:2;S&&S.party.forEach((h,i)=>g.drawImage(SPR[HERO[h.id].spr].down[0],128-n*16+i*32,138,32,32));
 }
 let lastT=performance.now();
 function loop(t){
@@ -1373,7 +1676,7 @@ buildTiles();buildChars();buildEnemies();
 setMute(A.muted);layout();requestAnimationFrame(loop);
 document.addEventListener('visibilitychange',()=>{if(!A.ctx)return;if(document.hidden)A.ctx.suspend();else A.ctx.resume()});
 title();
-window.__G={get S(){return S},P,Fo,MAPS,OBJ,battle:(...a)=>runScript(()=>battle(...a)),press,setMap,get mode(){return mode},uiStack,FOREST,EN,expNeed,saveGame,loadGame,get busy(){return busy}};
+window.__G={get S(){return S},P,Fo,FOL,MAPS,OBJ,battle:(...a)=>runScript(()=>battle(...a)),press,setMap,get mode(){return mode},uiStack,FOREST,EN,expNeed,saveGame,loadGame,get busy(){return busy}};
 </script>
 </body>
 </html>
